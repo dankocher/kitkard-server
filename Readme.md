@@ -1,6 +1,6 @@
-#**Kitkard Server**
+##**Kitkard Server**
 
-####**Installation**
+**Installation**
 
 <pre>
 npm init --yes
@@ -23,7 +23,7 @@ npm install babel-core babel-loader babel-preset-react babel-preset-env -D
 <br>
 <br>
 
-####**Nginx settings**
+**Nginx settings**
 <pre>
 location / {
     proxy_pass http://localhost:3000;
