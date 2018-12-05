@@ -1,0 +1,89 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?i6ibk6');
+  src:  url('fonts/icomoon.eot?i6ibk6#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?i6ibk6') format('truetype'),
+    url('fonts/icomoon.woff?i6ibk6') format('woff'),
+    url('fonts/icomoon.svg?i6ibk6#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-plus:before {
+  content: "\e90b";
+}
+.icon-unselected:before {
+  content: "\e909";
+}
+.icon-selected:before {
+  content: "\e90a";
+}
+.icon-logout:before {
+  content: "\e90e";
+}
+.icon-terms:before {
+  content: "\e90d";
+}
+.icon-policy:before {
+  content: "\e908";
+}
+.icon-terms:before {
+  content: "\e90d";
+}
+.icon-share:before {
+  content: "\e906";
+}
+.icon-theme:before {
+  content: "\e907";
+}
+.icon-kitkard_round:before {
+  content: "\e905";
+}
+.icon-search:before {
+  content: "\e900";
+}
+.icon-profile:before {
+  content: "\e901";
+}
+.icon-notifications:before {
+  content: "\e902";
+}
+.icon-my_cards:before {
+  content: "\e903";
+}
+.icon-cardholder:before {
+  content: "\e904";
+}
+.icon-help:before {
+  content: "\e941";
+}
+.icon-history:before {
+  content: "\e94d";
+}
+.icon-cache:before {
+  content: "\e964";
+}
+.icon-keepers:before {
+  content: "\e972";
+}
+.icon-password:before {
+  content: "\e98d";
+}
+.icon-language:before {
+  content: "\e9c9";
+}
