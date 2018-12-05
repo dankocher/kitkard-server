@@ -1,0 +1,31 @@
+@mixin vertical-center() {
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+}
+@mixin horizontal-center() {
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+}
+@mixin center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin shadow($inset, $h, $v, $blur, $color ) {
+    -webkit-box-shadow: $inset $h $v $blur $color;
+    -moz-box-shadow: $inset $h $v $blur $color;
+    box-shadow: $inset $h $v $blur $color;
+}
+
+@mixin boxShadow() {
+    @include shadow(0, 0, 5px, 3px, rgba(0, 0, 0, 0.2))
+}
