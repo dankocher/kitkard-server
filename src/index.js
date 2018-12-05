@@ -13,8 +13,8 @@ const MONGO_URL = 'mongodb://127.0.0.1/kitkard';
 const app = express();
 
 app.use(function (req, res, next) {
-    res.setHeader('X-Powered-By', 'Kitkard')
-    next()
+    res.setHeader('X-Powered-By', 'Kitkard');
+    next();
 });
 
 app.use(session({
@@ -34,7 +34,7 @@ app.use(session({
 
 // /+username
 app.get(/\/\+.*/, (req, res) => {
-    console.log(req.sessionID)
+    console.log(req.sessionID);
     req.session.cuenta = req.session.cuenta ? req.session.cuenta + 1 : 1;
     res.send(`Has visto esta pagina: ${req.session.cuenta} veces`);
 });
@@ -52,7 +52,8 @@ app.use('/kit/user', require('./routes/user.routes'));
 
 //Static files
 // console.log(path.join(__dirname, "public"));
-app.use(express.static(path.join(__dirname, "public")));
+// WebApp Client
+app.use(express.static(path.join(__dirname, "../web")));
 
 // Starting server
 app.listen(app.get('port'), () => {
