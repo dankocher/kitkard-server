@@ -1,4 +1,4 @@
-##**Kitkard Server**
+<h1>Kitkard Server</h1>
 
 **Installation**
 
