@@ -7,7 +7,10 @@ const CardSchema = new Schema({
     name: {type: String, required: false },
     description: {type: String, required: false} ,
     is_private: { type: Boolean, required: true },
-    date: { type: Number, required: true }
+    date: { type: Number, required: true },
+    updated: { type: Number, required: false},
+    contacts: { type: Object, required: false},
+    pictures: { type: Array, required: false}
 });
 
 module.exports = mongoose.model('Card', CardSchema, 'cards');

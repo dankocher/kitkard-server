@@ -73,6 +73,40 @@ router.post("/create/", async (req, res) => {
 });
 
 
+//GET USER BY SESSION
+router.post('/save/:cardname', async (req, res) => {
+    const { card } = req.body;
+    const { cardname } = req.params;
+    const __user = await User.findOne({
+        email: req.session.__email,
+        password: req.session.__password
+    });
+
+    if (card.cardname === cardname && __user != null && __user.cards.find(c => {return c === cardname}) !== undefined) {
+        const response = await Card.updateOne({cardname: cardname},
+            {
+                name: card.name || "",
+                description: card.description || "",
+                is_private: card.is_private || false,
+                updated: card.updated || card.date,
+                pictures: card.pictures || [],
+                contacts: card.contacts || {
+                    byId: {},
+                    ids: []
+                }
+            });
+        if (response.ok) {
+            res.json({status: 'updated'});
+        } else {
+            res.json({status: 'error'});
+        }
+    } else {
+        console.log(req.sessionId);
+        res.json({status: 'incorrect'});
+    }
+
+    // res.json({ user: dbUser, session: req.sessionID });
+});
 
 
 module.exports =  router;

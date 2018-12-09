@@ -58,24 +58,17 @@ router.post('/:session', async (req, res) => {
         email: req.session.__email,
         password: req.session.__password
     });
-    
     res.json({ user: dbUser, session: req.sessionID });
 });
 
+//CHECK USER BY SESSION
+router.post('/cs/:session', async (req, res) => {
+    const { email, password } = req.body;
+    const { session } = req.params;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+    res.json({ status: "session", session: req.sessionID });
+});
 
 
 
@@ -101,10 +94,6 @@ router.get("/:email/:password", async (req, res) => {
     }
 });
 
-
-
-
-
 //GET USER BY ID
 router.get("/:id", async (req, res) => {
     //TODO: check user with session
@@ -112,10 +101,6 @@ router.get("/:id", async (req, res) => {
 
     res.json(user);
 });
-
-
-
-
 
 
 //UPDATE
@@ -131,18 +116,11 @@ router.put('/:id', async (req, res) => {
     res.json({status: "updated"});
 });
 
-
 //TODO: REMOVE THIS for user
 router.delete('/:id', async (req, res) => {
     await User.findByIdAndRemove(req.params.id);
     res.json({status: "deleted"});
 });
-
-
-
-
-
-
 
 
 module.exports =  router;

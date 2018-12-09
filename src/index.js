@@ -49,6 +49,7 @@ app.use(express.json());
 //Routes
 app.use('/kit/user/card/', require('./routes/user.card.routes'));
 app.use('/kit/user', require('./routes/user.routes'));
+app.use('/kit/card', require('./routes/card.routes'));
 
 //Static files
 // console.log(path.join(__dirname, "public"));
