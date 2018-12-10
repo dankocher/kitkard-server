@@ -101,7 +101,6 @@ router.post('/save/:cardname', async (req, res) => {
             res.json({status: 'error'});
         }
     } else {
-        console.log(req.sessionId);
         res.json({status: 'incorrect'});
     }
 

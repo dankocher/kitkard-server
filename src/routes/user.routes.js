@@ -3,6 +3,7 @@ const router = express.Router();
 
 const User = require("../models/user");
 const Card = require("../models/card");
+const Session = require("../models/Session");
 
 // REGISTRATION OR LOGIN IF EXIST
 router.post("/", async (req, res) => {
@@ -62,12 +63,23 @@ router.post('/:session', async (req, res) => {
 });
 
 //CHECK USER BY SESSION
-router.post('/cs/:session', async (req, res) => {
-    const { email, password } = req.body;
+router.get('/cs/:session', async (req, res) => {
     const { session } = req.params;
 
-
-    res.json({ status: "session", session: req.sessionID });
+    if (session === req.sessionID) {
+        res.json({status: "ok"});
+    } else {
+        const __sess = await Session.findById(session);
+        if (__sess !== null) {
+            const j_sess = await JSON.parse(__sess.session);
+            req.session.__email = j_sess.__email;
+            req.session.__password = j_sess.__password;
+            await __sess.delete();
+            res.json({status: "session", session: req.sessionID});
+        } else {
+            res.json({status: "incorrect"})
+        }
+    }
 });
 
 

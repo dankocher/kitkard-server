@@ -7,8 +7,6 @@ const User = require("../models/user");
 router.get("/:cardname", async (req, res) => {
     const { cardname } = req.params;
 
-    console.log(cardname);
-
     const __user = await User.findOne({
         email: req.session.__email,
         password: req.session.__password
@@ -20,16 +18,16 @@ router.get("/:cardname", async (req, res) => {
         res.json({status: "incorrect"})
     }
     else // User Card
-    if (__user.cards.find(c => {return c === cardname})) {
+    if (__user != null && __user.cards !== undefined && __user.cards.find(c => {return c === cardname})) {
         res.json({status: "cards", card: dbcard});
     }
     else // Cardholder
-    if (__user.cardholder !== undefined && __user.cardholder.find(friend => {return friend.cardname === cardname}))
+    if (__user != null && __user.cardholder !== undefined && __user.cardholder.find(friend => {return friend.cardname === cardname}))
     {
         res.json({status: "cardholder", card: dbcard});
     }
     else // Keeper
-    if (__user.keepers !== undefined && __user.keepers.find(keeper => {return keeper.cardname === cardname}))
+    if (__user != null && __user.keepers !== undefined && __user.keepers.find(keeper => {return keeper.cardname === cardname}))
     {
         res.json({status: "keepers", card: dbcard});
     }
