@@ -76,7 +76,7 @@ var kws = io     // kitkard websocket
         console.log("Connected: %s sockets connected", connections.length);
 
         socket.on('username', (data) => {
-            // console.log(socket);
+            console.log(data);
         });
 
         socket.on('disconnect', data => {
@@ -86,11 +86,11 @@ var kws = io     // kitkard websocket
     });
 
 var rc = io     //room card
-    .of('/krc/:cardname')
+    .of('/krc')
     .on('connection', socket => {
+        console.log("connection");
         // var room = socket.handshake['query']['rc'];
-        // var room = socket.handshake['query']['rc'];
-
+        const room = socket.handshake['query']['cardname'];
         socket.join(room);
         console.log('user joined to room %s', room);
 
@@ -99,8 +99,8 @@ var rc = io     //room card
             console.log('user disconnected');
         });
 
-        socket.on('changed', msg => {
-            io.to(room).emit('changed', msg);
+        socket.on('updated', msg => {
+            rc.in(room).emit('updated', msg);
         })
 
     });
