@@ -82,8 +82,29 @@ router.get('/cs/:session', async (req, res) => {
     }
 });
 
+router.get("/sync/", async(req, res) => {
+    const __user = await User.findOne({
+        email: req.session.__email,
+        password: req.session.__password
+    });
 
+    if (__user !== null) {
+        res.json({status: "updated", updated: __user.updated || __user.date});
+    } else {
+        res.json({status: "incorrect"})
+    }
+});
 
+router.post("/update/", async(req, res) => {
+    const __user = await User.findOne({
+        email: req.session.__email,
+        password: req.session.__password
+    });
+
+    if (__user == null) {
+        res.json({status: "incorrect"})
+    }
+});
 
 //GET USER BY ID
 router.get("/:email/:password", async (req, res) => {

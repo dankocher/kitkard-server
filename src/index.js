@@ -53,6 +53,7 @@ app.use(express.json());
 app.use('/kit/user/card/', require('./routes/user.card.routes'));
 app.use('/kit/user', require('./routes/user.routes'));
 app.use('/kit/card', require('./routes/card.routes'));
+app.use('/pic/', require('./routes/picture.routes'));
 
 //Static files
 // console.log(path.join(__dirname, "public"));
@@ -69,38 +70,45 @@ server.listen(app.get('port'), () => {
 // WebSocket
 users = [];
 connections = [];
-var kws = io     // kitkard websocket
-    .of('/kws')
-    .on('connection', socket => {
-        connections.push(socket);
-        console.log("Connected: %s sockets connected", connections.length);
-
-        socket.on('username', (data) => {
-            console.log(data);
-        });
-
-        socket.on('disconnect', data => {
-            connections.splice(connections.indexOf(socket), 1);
-            console.log("Disconnected: %s sockets connected", connections.length);
-        })
-    });
+// var kws = io     // kitkard websocket
+//     .of('/kws')
+//     .on('connection', socket => {
+//         connections.push(socket);
+//         console.log("Connected: %s sockets connected", connections.length);
+//
+//         socket.on('username', (data) => {
+//             console.log(data);
+//         });
+//
+//         socket.on('disconnect', data => {
+//             connections.splice(connections.indexOf(socket), 1);
+//             console.log("Disconnected: %s sockets connected", connections.length);
+//         })
+//     });
 
 var rc = io     //room card
     .of('/krc')
     .on('connection', socket => {
-        console.log("connection");
-        // var room = socket.handshake['query']['rc'];
         const room = socket.handshake['query']['cardname'];
         socket.join(room);
-        console.log('user joined to room %s', room);
+        console.log('SOCKET >>> user joined to room %s', room);
 
         socket.on('disconnect', function () {
             socket.leave(room);
-            console.log('user disconnected');
+            console.log('SOCKET >>> user disconnected from room %s', room);
         });
 
         socket.on('updated', msg => {
+            console.log(">>>>>> updated", room);
             rc.in(room).emit('updated', msg);
+        });
+        socket.on('created', msg => {
+            console.log(">>>>>> created", room);
+            rc.in(room).emit('created');
+        });
+        socket.on('deleted', msg => {
+            console.log(">>>>>> deleted", room);
+            rc.in(room).emit('deleted');
         })
 
     });

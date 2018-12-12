@@ -4,27 +4,6 @@ const router = express.Router();
 const Card = require("../models/card");
 const User = require("../models/user");
 
-router.post("/", async (req, res) => {
-    //TODO: check user with session
-    const { cardname } = req.body;
-
-    const __user = await User.findOne({
-        email: req.session.__email,
-        password: req.session.__password
-    });
-
-    if (__user != null && __user.cards.indexOf(cardname) >= 0) //Card not Exist
-    {
-        const __card = await Card.findOne({ cardname });
-        // console.log(__card);
-        res.json({status: "card", card: __card})
-    }
-    else    //Card exist
-    {    
-        res.json({ status: "incorrect" });
-    }
-});
-
 
 router.post("/create/", async (req, res) => {
     //TODO: check user with session
@@ -61,6 +40,7 @@ router.post("/create/", async (req, res) => {
                 } else {
                     dbUser.cards.push(cardname);
                 }
+                dbUser.updated = new Date().getTime();
                 await dbUser.save();
                 res.json({ status: 'created', user: dbUser, card: card });
             }
@@ -72,8 +52,7 @@ router.post("/create/", async (req, res) => {
     }
 });
 
-
-//GET USER BY SESSION
+//SAVE USER BY SESSION
 router.post('/save/:cardname', async (req, res) => {
     const { card } = req.body;
     const { cardname } = req.params;
@@ -107,5 +86,29 @@ router.post('/save/:cardname', async (req, res) => {
     // res.json({ user: dbUser, session: req.sessionID });
 });
 
+// DELETE CARD
+router.delete('/delete/:cardname', async (req, res) => {
+    const { cardname } = req.params;
+    const __user = await User.findOne({
+        email: req.session.__email,
+        password: req.session.__password
+    });
+
+    if (__user !== null && __user.username !== cardname
+        && __user.cards.find(c => {return c === cardname}) !== undefined) {
+        Card.deleteOne({cardname: cardname}, err => {
+            if (!err) {
+                __user.cards.splice(__user.cards.indexOf(cardname), 1);
+                __user.updated = new Date().getTime();
+                __user.save();
+                res.json({status: "deleted"});
+            } else {
+                res.json({status: "incorrect"})
+            }
+        })
+    } else {
+        res.json({status: "incorrect"})
+    }
+});
 
 module.exports =  router;
