@@ -95,6 +95,26 @@ router.get("/sync/", async(req, res) => {
     }
 });
 
+router.post("/save_search/", async(req, res) => {
+    //TODO: Sync and save search!!!!!!!!!!
+    const { card, updated } = req.body;
+
+    const __user = await User.findOne({
+        email: req.session.__email,
+        password: req.session.__password
+    });
+
+    if (__user !== null) {
+        if (__user.search === undefined) {
+            __user.search = []
+        }
+
+        res.json({status: "updated", updated: __user.updated});
+    } else {
+        res.json({status: "incorrect"})
+    }
+});
+
 router.post("/update/", async(req, res) => {
     const __user = await User.findOne({
         email: req.session.__email,

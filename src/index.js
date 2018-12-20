@@ -51,8 +51,10 @@ app.use(express.json());
 
 //Routes
 app.use('/kit/user/card/', require('./routes/user.card.routes'));
-app.use('/kit/user', require('./routes/user.routes'));
-app.use('/kit/card', require('./routes/card.routes'));
+app.use('/kit/user/', require('./routes/user.routes'));
+app.use('/kit/card/', require('./routes/card.routes'));
+app.use('/kit/cardholder/', require('./routes/cardholder.routes'));
+app.use('/kit/search/', require('./routes/search.routes'));
 app.use('/pic/', require('./routes/picture.routes'));
 
 //Static files
@@ -68,8 +70,48 @@ server.listen(app.get('port'), () => {
 
 
 // WebSocket
-users = [];
-connections = [];
+var rc = io     //room card
+    .of('/krc')
+    .on('connection', socket => {
+        const room = socket.handshake['query']['cardname'];
+        socket.join(room);
+        console.log('SOCKET >>> user joined to room %s', room);
+
+        socket.on('disconnect', function () {
+            socket.leave(room);
+            console.log('SOCKET >>> user disconnected from room %s', room);
+        });
+        socket.on('c_updated', msg => {
+            console.log(">>>>>> c_updated", room);
+            rc.in(room).emit('c_updated', msg);
+        });
+        socket.on('updated', msg => {
+            console.log(">>>>>> updated", room);
+            rc.in(room).emit('updated', msg);
+        });
+        socket.on('created', msg => {
+            console.log(">>>>>> created", room);
+            rc.in(room).emit('created');
+        });
+        socket.on('deleted', msg => {
+            console.log(">>>>>> deleted", room);
+            rc.in(room).emit('deleted');
+        })
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+// users = [];
+// connections = [];
 // var kws = io     // kitkard websocket
 //     .of('/kws')
 //     .on('connection', socket => {
@@ -86,29 +128,4 @@ connections = [];
 //         })
 //     });
 
-var rc = io     //room card
-    .of('/krc')
-    .on('connection', socket => {
-        const room = socket.handshake['query']['cardname'];
-        socket.join(room);
-        console.log('SOCKET >>> user joined to room %s', room);
 
-        socket.on('disconnect', function () {
-            socket.leave(room);
-            console.log('SOCKET >>> user disconnected from room %s', room);
-        });
-
-        socket.on('updated', msg => {
-            console.log(">>>>>> updated", room);
-            rc.in(room).emit('updated', msg);
-        });
-        socket.on('created', msg => {
-            console.log(">>>>>> created", room);
-            rc.in(room).emit('created');
-        });
-        socket.on('deleted', msg => {
-            console.log(">>>>>> deleted", room);
-            rc.in(room).emit('deleted');
-        })
-
-    });

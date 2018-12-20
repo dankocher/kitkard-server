@@ -9,6 +9,7 @@ const UserSchema = new Schema({
     cards: { type: Array, required: false},
     date: {type: Number, required: true},
     updated: {type: Number, required: false},
+    search: {type: Array, required: false}
 });
 
 module.exports = mongoose.model('User', UserSchema, 'users');
