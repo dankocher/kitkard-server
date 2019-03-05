@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const Card = require("../models/card");
-const User = require("../models/user");
+const Card = require("../../models/card");
+const User = require("../../models/user");
 
-const filterCard = require("../helphers/filterCard");
+const filterCard = require("../../helphers/filterCard");
 
 router.get("/:cardname", async (req, res) => {
     const { cardname } = req.params;

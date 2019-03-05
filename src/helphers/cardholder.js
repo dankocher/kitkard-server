@@ -1,5 +1,9 @@
 const Card = require("../models/card");
 
+const isMyCard = async (user, cardname) => {
+    return user.cards.findIndex(c => c === cardname) >= 0;
+};
+
 const isCardholder = async (user, cardname) => {
     for (const myCardname of user.cards) {
         const myCard = await Card.findOne({cardname: myCardname});
@@ -45,7 +49,7 @@ const isPrivateEnabled = async (user, cardname) => {
     return false
 };
 
-module.exports = {isCardholder, isRequested, isKeeper, isPrivateEnabled};
+module.exports = {isMyCard, isCardholder, isRequested, isKeeper, isPrivateEnabled};
 // router.exports.isCardholder = isCardholder;
 // router.exports.isKeeper = isKeeper;
 // router.exports.isPrivateEnabled = isPrivateEnabled;

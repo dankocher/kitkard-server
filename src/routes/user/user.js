@@ -1,14 +1,15 @@
 const express = require('express');
 const router = express.Router();
 
-const User = require("../models/user");
-const Card = require("../models/card");
-const Session = require("../models/Session");
+const User = require("../../models/user");
+const Session = require("../../models/Session");
 
 // REGISTRATION OR LOGIN IF EXIST
 router.post("/", async (req, res) => {
     //TODO: check user with session
     const { email, password, from } = req.body;
+
+    console.log(email, password, from)
 
     var user = await User.findOne({email: new RegExp(email, 'i')});
 
@@ -24,7 +25,7 @@ router.post("/", async (req, res) => {
 
         req.session.__email = email;
         req.session.__password = password;
-        
+
         res.json({status: "registered", "session": req.sessionID});
     }
     else    //LOGIN
@@ -39,14 +40,14 @@ router.post("/", async (req, res) => {
                 "password": password
             });
         }
-        console.log(email);
-        console.log(from);
-        console.log(user);
+        console.log("email", email);
+        console.log("from", from);
+        console.log("user", user);
         if (user != null && user.enabled === true) {
             req.session.__email = email;
             req.session.__password = user.password;
             res.json({status: "login", "session": req.sessionID});
-        } else 
+        } else
         if (user != null && user.disabled === false) {
             res.json({status: "disabled"});
         } else {
@@ -59,10 +60,15 @@ router.post("/", async (req, res) => {
 router.post('/:session', async (req, res) => {
     const { email, password } = req.body;
     const { session } = req.params;
+
+    console.log(session, req.sessionID)
+
     if (session !== res.sessionID) {
-        // req.session.__email = email;
-        // req.session.__password = password;
+        req.session.__email = email;
+        req.session.__password = password;
     }
+
+
     console.log(req.session)
     const dbUser = await User.findOne({
         email: req.session.__email,
@@ -70,59 +76,6 @@ router.post('/:session', async (req, res) => {
     });
     console.log(dbUser)
     res.json({ user: dbUser, session: req.sessionID });
-});
-
-//CHECK USER BY SESSION
-router.get('/cs/:session', async (req, res) => {
-    const { session } = req.params;
-
-    if (session === req.sessionID) {
-        res.json({status: "ok"});
-    } else {
-        const __sess = await Session.findById(session);
-        if (__sess !== null) {
-            const j_sess = await JSON.parse(__sess.session);
-            req.session.__email = j_sess.__email;
-            // req.session.__password = j_sess.__password;
-            await __sess.delete();
-            res.json({status: "session", session: req.sessionID});
-        } else {
-            res.json({status: "incorrect"})
-        }
-    }
-});
-
-router.get("/sync/", async(req, res) => {
-    const __user = await User.findOne({
-        email: req.session.__email,
-        password: req.session.__password
-    });
-
-    if (__user !== null) {
-        res.json({status: "updated", updated: __user.updated || __user.date});
-    } else {
-        res.json({status: "incorrect"})
-    }
-});
-
-router.post("/save_search/", async(req, res) => {
-    //TODO: Sync and save search!!!!!!!!!!
-    const { card, updated } = req.body;
-
-    const __user = await User.findOne({
-        email: req.session.__email,
-        password: req.session.__password
-    });
-
-    if (__user !== null) {
-        if (__user.search === undefined) {
-            __user.search = []
-        }
-
-        res.json({status: "updated", updated: __user.updated});
-    } else {
-        res.json({status: "incorrect"})
-    }
 });
 
 router.post("/update/", async(req, res) => {
@@ -149,7 +102,7 @@ router.get("/:email/:password", async (req, res) => {
         req.session.__email = email;
         req.session.__password = password;
         res.json({status: "login", "session": req.sessionID});
-    } else 
+    } else
     if (user != null && user.disabled === false) {
         res.json({status: "disabled"});
     } else {

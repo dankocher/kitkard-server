@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const Card = require("../models/card");
-const User = require("../models/user");
+const Card = require("../../../models/card");
+const User = require("../../../models/user");
 
 
 router.post("/create/", async (req, res) => {
@@ -46,7 +46,7 @@ router.post("/create/", async (req, res) => {
             }
         }
         else    //Card exist
-        {    
+        {
             res.json({ status: "exist" });
         }
     }

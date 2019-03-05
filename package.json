@@ -12,13 +12,19 @@
   "license": "ISC",
   "dependencies": {
     "connect-mongo": "^2.0.1",
+    "cors": "latest",
+    "create-emitter": "^1.1.4",
     "express": "^4.16.4",
     "express-session": "^1.15.6",
+    "formidable": "^1.2.1",
+    "mongo-observer": "^1.2.1",
+    "mongodb": "latest",
     "mongoose": "^5.3.8",
     "morgan": "^1.9.1",
     "require.js": "^1.0.0",
-    "socket.io": "latest",
-    "mongodb": "latest"
+    "sha256": "^0.2.0",
+    "sharp": "^0.21.1",
+    "socket.io": "latest"
   },
   "devDependencies": {
     "nodemon": "^1.18.5"
