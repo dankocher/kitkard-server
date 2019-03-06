@@ -1,0 +1,471 @@
+{ 
+    "_id" : ObjectId("5c07ccb5eea9187cf06e6c8f"), 
+    "cardname" : "daniel", 
+    "uid" : "5c07ccb2eea9187cf06e6c8e", 
+    "is_private" : true, 
+    "date" : 1544015029588.0, 
+    "__v" : NumberInt(102), 
+    "description" : "Инженер-Программист", 
+    "name" : "Даниэль Чернышёв", 
+    "contacts" : {
+        "byId" : {
+            "phone-1544388992761" : {
+                "id" : "phone-1544388992761", 
+                "type" : "phone", 
+                "name" : "phone", 
+                "value" : "375333890990", 
+                "is_private" : true
+            }, 
+            "facebook-1544450347043" : {
+                "id" : "facebook-1544450347043", 
+                "type" : "facebook", 
+                "name" : "facebook", 
+                "value" : "рррррр", 
+                "is_private" : false
+            }, 
+            "vk-1544626966996" : {
+                "id" : "vk-1544626966996", 
+                "type" : "vk", 
+                "name" : "vk", 
+                "value" : "роошдоршш", 
+                "is_private" : true
+            }, 
+            "telegram-1544694468463" : {
+                "id" : "telegram-1544694468463", 
+                "type" : "telegram", 
+                "name" : "telegram", 
+                "value" : "okcjdig", 
+                "is_private" : false
+            }, 
+            "kitkard-1544694472340" : {
+                "id" : "kitkard-1544694472340", 
+                "type" : "kitkard", 
+                "name" : "kitkard", 
+                "value" : "jcjckvk", 
+                "is_private" : false
+            }, 
+            "address-1544694504362" : {
+                "id" : "address-1544694504362", 
+                "type" : "address", 
+                "name" : "address", 
+                "value" : "минск", 
+                "is_private" : false
+            }, 
+            "email-1544694527538" : {
+                "id" : "email-1544694527538", 
+                "type" : "email", 
+                "name" : "email", 
+                "value" : "ggji", 
+                "is_private" : false
+            }, 
+            "website-1544694546668" : {
+                "id" : "website-1544694546668", 
+                "type" : "website", 
+                "name" : "website", 
+                "value" : "ufucivkb", 
+                "is_private" : true
+            }
+        }, 
+        "ids" : [
+            "phone-1544388992761", 
+            "website-1544694546668", 
+            "telegram-1544694468463", 
+            "facebook-1544450347043", 
+            "kitkard-1544694472340", 
+            "email-1544694527538", 
+            "vk-1544626966996", 
+            "address-1544694504362"
+        ]
+    }, 
+    "updated" : 1551643293372.0, 
+    "cardholder" : {
+        "testtest" : {
+            "private_enabled" : false, 
+            "enabled" : true, 
+            "date" : 1545303416511.0
+        }, 
+        "testdaniel" : {
+            "private_enabled" : false, 
+            "enabled" : true, 
+            "date" : 1545313250915.0
+        }, 
+        "daniel1" : {
+            "private_enabled" : false, 
+            "enabled" : true, 
+            "date" : 1545484634179.0
+        }
+    }, 
+    "notifications" : [
+        {
+            "type" : "request_card", 
+            "from_cardname" : "testtest", 
+            "viewed" : true, 
+            "date" : 1545327206259.0, 
+            "action" : "accepted"
+        }, 
+        {
+            "type" : "request_card", 
+            "from_cardname" : "danieltest", 
+            "viewed" : false, 
+            "date" : 1545327143614.0
+        }, 
+        {
+            "type" : "request_card", 
+            "from_cardname" : "testtest", 
+            "viewed" : true, 
+            "date" : 1540127286259.0, 
+            "action" : "accepted"
+        }
+    ], 
+    "c_updated" : 1546965166039.0, 
+    "k_updated" : 1545327206259.0, 
+    "n_updated" : 1545327206259.0, 
+    "keepers" : {
+        "danieltest" : {
+            "private_enabled" : false, 
+            "enabled" : false, 
+            "date" : 1545327143614.0
+        }, 
+        "testtest" : {
+            "private_enabled" : false, 
+            "enabled" : false, 
+            "date" : 1545327206259.0
+        }
+    }, 
+    "pictures" : [
+        "13d5988a33763d3f82aa4379c7a35d4457b6aa2514ce7f5a48b1d13083b39f6f", 
+        "127d5e0005e59e5ee0d1b28aa95b93197379d0ddf381785d2cc8cc90ad479660"
+    ]
+}
+{ 
+    "_id" : ObjectId("5c0e6fbe38c65b1a8d4ea714"), 
+    "pictures" : [
+
+    ], 
+    "cardname" : "danieltest", 
+    "uid" : "5c0e6fb038c65b1a8d4ea713", 
+    "is_private" : true, 
+    "date" : 1544449982047.0, 
+    "__v" : NumberInt(4), 
+    "contacts" : {
+        "byId" : {
+
+        }, 
+        "ids" : [
+
+        ]
+    }, 
+    "description" : "Yyyyyy", 
+    "name" : "Test", 
+    "updated" : 1544450172583.0, 
+    "keepers" : {
+        "dankocher" : {
+            "private_enabled" : false, 
+            "enabled" : false, 
+            "date" : 1545776082451.0
+        }
+    }, 
+    "k_updated" : 1546965166039.0, 
+    "n_updated" : 1546965166039.0, 
+    "notifications" : [
+        {
+            "type" : "request_card", 
+            "from_cardname" : "dankocher", 
+            "viewed" : false, 
+            "date" : 1545776082451.0
+        }
+    ], 
+    "c_updated" : 1545327143614.0, 
+    "cardholder" : {
+        "daniel" : {
+            "private_enabled" : false, 
+            "enabled" : false, 
+            "date" : 1545327143614.0
+        }
+    }
+}
+{ 
+    "_id" : ObjectId("5c136fcd9b642c363112f8b2"), 
+    "pictures" : [
+
+    ], 
+    "cardname" : "testtest", 
+    "uid" : "5c136fc09b642c363112f8b1", 
+    "is_private" : false, 
+    "date" : 1544777677043.0, 
+    "__v" : NumberInt(6), 
+    "k_updated" : 1545303416511.0, 
+    "keepers" : {
+        "daniel" : {
+            "private_enabled" : false, 
+            "enabled" : true, 
+            "date" : 1545303416511.0
+        }
+    }, 
+    "n_updated" : 1545303416511.0, 
+    "notifications" : [
+        {
+            "type" : "added_card", 
+            "from_cardname" : "daniel", 
+            "viewed" : false, 
+            "date" : 1545303416511.0
+        }, 
+        {
+            "type" : "added_card", 
+            "from_cardname" : "dankocher", 
+            "viewed" : false, 
+            "date" : 1545303378417.0
+        }, 
+        {
+            "type" : "added_card", 
+            "from_cardname" : "daniel", 
+            "viewed" : false, 
+            "date" : 1545303367571.0
+        }, 
+        {
+            "type" : "added_card", 
+            "from_cardname" : "daniel", 
+            "viewed" : false, 
+            "date" : 1545302408848.0
+        }
+    ], 
+    "c_updated" : 1545327212257.0, 
+    "cardholder" : {
+        "daniel" : {
+            "private_enabled" : false, 
+            "enabled" : false, 
+            "date" : 1545327206259.0
+        }, 
+        "dankocher" : {
+            "private_enabled" : false, 
+            "enabled" : true, 
+            "date" : 1545327212257.0
+        }
+    }
+}
+{ 
+    "_id" : ObjectId("5c136fe79b642c363112f8b4"), 
+    "pictures" : [
+
+    ], 
+    "cardname" : "testdaniel", 
+    "uid" : "5c136fdf9b642c363112f8b3", 
+    "is_private" : false, 
+    "date" : 1544777703813.0, 
+    "__v" : NumberInt(3), 
+    "k_updated" : 1545313250915.0, 
+    "n_updated" : 1545313250915.0, 
+    "keepers" : {
+        "daniel" : {
+            "private_enabled" : false, 
+            "enabled" : true, 
+            "date" : 1545313250915.0
+        }
+    }, 
+    "notifications" : [
+        {
+            "type" : "added_card", 
+            "from_cardname" : "daniel", 
+            "viewed" : false, 
+            "date" : 1545313250915.0
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("5c13700e9b642c363112f8b6"), 
+    "pictures" : [
+
+    ], 
+    "cardname" : "dandan", 
+    "uid" : "5c1370099b642c363112f8b5", 
+    "is_private" : false, 
+    "date" : 1544777742957.0, 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5c13702e9b642c363112f8b8"), 
+    "pictures" : [
+
+    ], 
+    "cardname" : "testcard", 
+    "uid" : "5c1370279b642c363112f8b7", 
+    "is_private" : false, 
+    "date" : 1544777774689.0, 
+    "__v" : NumberInt(0), 
+    "k_updated" : 1545281812733.0, 
+    "keepers" : {
+        "dankocher" : {
+            "private_enabled" : false, 
+            "enabled" : true, 
+            "date" : 1545281812733.0
+        }
+    }, 
+    "n_updated" : 1545281812733.0, 
+    "notifications" : [
+        {
+            "type" : "added_card", 
+            "from_cardname" : "dankocher", 
+            "viewed" : false, 
+            "date" : 1545281812733.0
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("5c1a10aa6f401a775cf0d9f7"), 
+    "pictures" : [
+        "cc3999fbaecc410bcafad150360dfbbce022750edf635d5fbdf71ab75d9297ca", 
+        "eebf5c37ad3929c8670c7365f6860b4bb9476c8642bd297248871b356a0fedbc", 
+        "4d47cc30bb9b5e4be16259fc11b4e9242db98a945997c0f91843472c55d86ca3"
+    ], 
+    "cardname" : "dankocher", 
+    "uid" : "5c07ccb2eea9187cf06e6c8e", 
+    "is_private" : true, 
+    "date" : 1545212074325.0, 
+    "__v" : NumberInt(5), 
+    "contacts" : {
+        "byId" : {
+            "kitkard-1545212111275" : {
+                "id" : "kitkard-1545212111275", 
+                "type" : "kitkard", 
+                "name" : "kitkard", 
+                "value" : "daniel", 
+                "is_private" : false
+            }, 
+            "viber-1545213601510" : {
+                "id" : "viber-1545213601510", 
+                "type" : "viber", 
+                "name" : "viber", 
+                "value" : "rrrrrrr"
+            }
+        }, 
+        "ids" : [
+            "viber-1545213601510", 
+            "kitkard-1545212111275"
+        ]
+    }, 
+    "description" : "Programmer", 
+    "name" : "Daniel Chernyshev", 
+    "updated" : 1546968364486.0, 
+    "c_updated" : 1545776082451.0, 
+    "cardholder" : {
+        "testcard" : {
+            "private_enabled" : false, 
+            "enabled" : true, 
+            "date" : 1545281812733.0
+        }, 
+        "danieltest" : {
+            "private_enabled" : false, 
+            "enabled" : false, 
+            "date" : 1545776082451.0
+        }
+    }, 
+    "k_updated" : 1545327212257.0, 
+    "keepers" : {
+        "daniel1" : {
+            "private_enabled" : false, 
+            "enabled" : true, 
+            "date" : 1545327155431.0
+        }, 
+        "testtest" : {
+            "private_enabled" : false, 
+            "enabled" : true, 
+            "date" : 1545327212257.0
+        }
+    }, 
+    "n_updated" : 1545327212257.0, 
+    "notifications" : [
+        {
+            "type" : "added_card", 
+            "from_cardname" : "testtest", 
+            "viewed" : false, 
+            "date" : 1545327212257.0
+        }, 
+        {
+            "type" : "added_card", 
+            "from_cardname" : "daniel1", 
+            "viewed" : false, 
+            "date" : 1545327155431.0
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("5c1bd21bc3b7737f8f18130f"), 
+    "pictures" : [
+
+    ], 
+    "notifications" : [
+        {
+            "type" : "added_card", 
+            "from_cardname" : "daniel", 
+            "viewed" : false, 
+            "date" : 1545484634179.0
+        }
+    ], 
+    "cardname" : "daniel1", 
+    "uid" : "5c0e6fb038c65b1a8d4ea713", 
+    "is_private" : false, 
+    "date" : 1545327131155.0, 
+    "__v" : NumberInt(0), 
+    "c_updated" : 1545327155431.0, 
+    "cardholder" : {
+        "dankocher" : {
+            "private_enabled" : false, 
+            "enabled" : true, 
+            "date" : 1545327155431.0
+        }
+    }, 
+    "k_updated" : 1545484634179.0, 
+    "keepers" : {
+        "daniel" : {
+            "private_enabled" : false, 
+            "enabled" : true, 
+            "date" : 1545484634179.0
+        }
+    }, 
+    "n_updated" : 1545484634179.0
+}
+{ 
+    "_id" : ObjectId("5c34ddfe1b9b4968c81dce50"), 
+    "pictures" : [
+        "b6ebc38328451562361fa14c97f824aafc17c764ef87b915bda61dc42bbe254e"
+    ], 
+    "notifications" : [
+
+    ], 
+    "cardname" : "GoodTea", 
+    "uid" : "5c07ccb2eea9187cf06e6c8e", 
+    "is_private" : false, 
+    "date" : 1546968574856.0, 
+    "__v" : NumberInt(3), 
+    "updated" : 1546968687591.0, 
+    "contacts" : {
+        "byId" : {
+            "phone-1546968631583" : {
+                "id" : "phone-1546968631583", 
+                "type" : "phone", 
+                "name" : "phone", 
+                "value" : "37533333333", 
+                "is_private" : true
+            }
+        }, 
+        "ids" : [
+            "phone-1546968631583"
+        ]
+    }, 
+    "description" : "Very good tea", 
+    "name" : "Good Tea"
+}
+{ 
+    "_id" : ObjectId("5c6022347090b71a2774f8b8"), 
+    "pictures" : [
+
+    ], 
+    "notifications" : [
+
+    ], 
+    "cardname" : "droquecher", 
+    "uid" : "5c601fb47090b71a2774f8b7", 
+    "is_private" : false, 
+    "date" : 1549804084140.0, 
+    "__v" : NumberInt(0)
+}

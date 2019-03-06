@@ -20,6 +20,7 @@ const CardSchema = new Schema({
 
     notifications: { type: Array, required: false},
     n_updated: { type: Number, required: false},
+    oldid: {type: String, required: false},
 });
 
 module.exports = mongoose.model('Card', CardSchema, 'cards');

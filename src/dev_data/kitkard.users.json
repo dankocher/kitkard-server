@@ -1,0 +1,131 @@
+{ 
+    "_id" : ObjectId("5c07ccb2eea9187cf06e6c8e"), 
+    "cards" : [
+        "daniel", 
+        "dankocher", 
+        "GoodTea"
+    ], 
+    "email" : "droque123@gmail.com", 
+    "password" : "e10adc3949ba59abbe56e057f20f883e", 
+    "enabled" : true, 
+    "date" : 1544015026154.0, 
+    "__v" : NumberInt(97), 
+    "username" : "daniel", 
+    "updated" : 1546968574858.0, 
+    "search" : [
+
+    ]
+}
+{ 
+    "_id" : ObjectId("5c0e6fb038c65b1a8d4ea713"), 
+    "cards" : [
+        "danieltest", 
+        "daniel1"
+    ], 
+    "email" : "droque123@mail.ru", 
+    "password" : "e10adc3949ba59abbe56e057f20f883e", 
+    "enabled" : true, 
+    "date" : 1544449968553.0, 
+    "__v" : NumberInt(2), 
+    "username" : "danieltest", 
+    "search" : [
+
+    ], 
+    "updated" : 1545327131175.0
+}
+{ 
+    "_id" : ObjectId("5c136fc09b642c363112f8b1"), 
+    "cards" : [
+        "testtest"
+    ], 
+    "email" : "sdfgsdfgd@gmail.com", 
+    "password" : "e10adc3949ba59abbe56e057f20f883e", 
+    "enabled" : true, 
+    "date" : 1544777664967.0, 
+    "__v" : NumberInt(1), 
+    "updated" : 1544777677045.0, 
+    "username" : "testtest"
+}
+{ 
+    "_id" : ObjectId("5c136fdf9b642c363112f8b3"), 
+    "cards" : [
+        "testdaniel"
+    ], 
+    "email" : "danieltest@gmail.com", 
+    "password" : "e10adc3949ba59abbe56e057f20f883e", 
+    "enabled" : true, 
+    "date" : 1544777695624.0, 
+    "__v" : NumberInt(1), 
+    "updated" : 1544777703815.0, 
+    "username" : "testdaniel"
+}
+{ 
+    "_id" : ObjectId("5c1370099b642c363112f8b5"), 
+    "cards" : [
+        "dandan"
+    ], 
+    "email" : "dandan@gmail.com", 
+    "password" : "e10adc3949ba59abbe56e057f20f883e", 
+    "enabled" : true, 
+    "date" : 1544777737394.0, 
+    "__v" : NumberInt(1), 
+    "updated" : 1544777742961.0, 
+    "username" : "dandan"
+}
+{ 
+    "_id" : ObjectId("5c1370279b642c363112f8b7"), 
+    "cards" : [
+        "testcard"
+    ], 
+    "email" : "testcard@gmail.com", 
+    "password" : "e10adc3949ba59abbe56e057f20f883e", 
+    "enabled" : true, 
+    "date" : 1544777767930.0, 
+    "__v" : NumberInt(1), 
+    "updated" : 1544777774691.0, 
+    "username" : "testcard"
+}
+{ 
+    "_id" : ObjectId("5c601fb47090b71a2774f8b7"), 
+    "cards" : [
+        "droquecher"
+    ], 
+    "search" : [
+
+    ], 
+    "email" : "droquecher@gmail.com", 
+    "password" : "d41d8cd98f00b204e9800998ecf8427e", 
+    "enabled" : true, 
+    "date" : 1549803444080.0, 
+    "__v" : NumberInt(1), 
+    "updated" : 1549804084144.0, 
+    "username" : "droquecher"
+}
+{ 
+    "_id" : ObjectId("5c794ca387f7e35455f85c2d"), 
+    "cards" : [
+
+    ], 
+    "search" : [
+
+    ], 
+    "email" : "dankocher@mail.ru", 
+    "password" : "e10adc3949ba59abbe56e057f20f883e", 
+    "enabled" : true, 
+    "date" : 1551453347583.0, 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5c794ce887f7e35455f85c2e"), 
+    "cards" : [
+
+    ], 
+    "search" : [
+
+    ], 
+    "email" : "dankocher1@mail.ru", 
+    "password" : "e10adc3949ba59abbe56e057f20f883e", 
+    "enabled" : true, 
+    "date" : 1551453416455.0, 
+    "__v" : NumberInt(0)
+}

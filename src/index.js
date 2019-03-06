@@ -41,7 +41,7 @@ app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
     res.header('Access-Control-Allow-Credentials', true);
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    res.header('Content-Type', 'application/json');
+    // res.header('Content-Type', 'application/json');
     next();
 });
 
@@ -88,14 +88,23 @@ app.use('/kit/notifications/', require('./routes/notifications.routes'));
 app.use('/pic/', require('./routes/picture.routes'));
 
 // Developments routes
-app.use('/dev/translations/', express.static(path.join(__dirname, "../dev/translations")));
-app.use('/dev/translations/api/', require('./routes/dev.translations.routes'));
+// app.use('/dev/translations/', express.static(path.join(__dirname, "../dev/translations")));
+// app.use('/dev/translations/api/', require('./routes/dev.translations.routes'));
 
 //Static files
 // console.log(path.join(__dirname, "public"));
 // WebApp Client
-app.use(express.static(path.join(__dirname, "../web")));
+// app.use(express.static(path.join(__dirname, "public/index.html")));
+app.use(express.static(path.join(__dirname, "/public")));
 
+console.log(path.join(__dirname, 'public/index.html'));
+
+// app.get('/', function (req, res) {
+//    // res.writeHead(200, {
+//    //     'Content-Type': 'text/html'
+//    // });
+//    res.sendFile(path.join(__dirname, 'public/index.html'));
+// });
 
 // Starting server
 server.listen(app.get('port'), () => {
@@ -119,8 +128,79 @@ server.listen(app.get('port'), () => {
 
 
 const Card = require("../src/models/card");
+const User = require("../src/models/user");
 
+
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 /*
+var fs = require("fs");
+const importUsers = async () => {
+    console.log("\n *STARTING* \n");
+    var contents = fs.readFileSync("src/old_data/users.json");
+    var users = JSON.parse(contents);
+    for (const u of users) {
+        let __user = await User.findOne({username: u.username});
+        if (__user == null) {
+            let user = new User({
+                oldid: u.oldid,
+                username: u.username,
+                email: u.email,
+                password: u.password,
+                updated: u.updated,
+                enabled: true,
+                date: u.date,
+                cards: u.cards
+            });
+            await user.save();
+        }
+    }
+    console.log("\n *Users was saved* \n");
+    setTimeout(importCards, 1000);
+};
+const importCards = async () => {
+    console.log("\n *STARTING* \n");
+    var contents = fs.readFileSync("src/old_data/cards.json");
+    var cards = JSON.parse(contents);
+    for (const c of cards) {
+        let __card = await Card.findOne({cardname: c.cardname});
+        if (__card == null) {
+            const user = await User.findOne({cards: c.cardname});
+            let card = new Card({
+                uid: user._id,
+                oldid: c.oldid,
+                cardname: c.cardname,
+                is_private: c.is_private,
+                description: c.description,
+                name: c.name,
+                pictures: c.pictures,
+                updated: c.updated,
+                date: c.date,
+                contacts: c.contacts,
+                c_updated: c.c_updated,
+                cardholder: c.cardholder,
+                k_updated: c.k_updated,
+                keepers: c.keepers,
+                n_updated: c.n_updated,
+                notifications: c.notifications,
+            });
+            // console.log(card);
+            await card.save();
+        }
+    }
+    console.log("\n *Cards was saved* \n");
+};
+
+setTimeout(importUsers, 2000);
+*/
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
 // WebSocket
 var rc = io     //room card
     .of('/krc')
@@ -155,7 +235,7 @@ var rc = io     //room card
         })
 
     });
-*/
+
 
 
 

@@ -12,13 +12,25 @@ const PATH = '/var/www/kitkard/pictures/';
 router.get("/:size/:pictureId", async (req, res) => {
     const {size, pictureId} = req.params;
     const _size = size === "l" || size === undefined ? "m" : size;
-    const path = PATH + pictureId + "." + _size;
+    const path = PATH + pictureId;
+    const pathSized = PATH + pictureId + "." + _size;
 
-    fs.readFile(path, function (err, content) {
+    fs.readFile(pathSized, function (err, content) {
         if (err) {
-            res.writeHead(400, {'Content-type':'text/html'});
-            console.log(err);
-            res.end("No such image");
+            fs.readFile(path, function (err2, content2) {
+                if (err2) {
+                    fs.readFile(path, function (err2, content2) {
+                        res.writeHead(200,{'Content-type':'image/jpg'});
+                        res.end(PATH + 'logo_gray.png');
+                    });
+                    // res.writeHead(400, {'Content-type':'text/html'});
+                    // console.log(err2);
+                    // res.end("No such image");
+                } else {
+                    res.writeHead(200,{'Content-type':'image/jpg'});
+                    res.end(content2);
+                }
+            })
         } else {
             //specify the content type in the response will be an image
             res.writeHead(200,{'Content-type':'image/jpg'});
