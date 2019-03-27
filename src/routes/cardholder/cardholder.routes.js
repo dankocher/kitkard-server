@@ -1,43 +1,40 @@
 const express = require('express');
 const router = express.Router();
 
-const User = require("../models/user");
-const Card = require("../models/card");
-const Session = require("../models/Session");
+const User = require("../../models/User");
+const Card = require("../../models/Card");
+const Friend = require("../../models/Friend");
+const Notification = require("../../models/Notification");
 
-const filterCard = require("../helphers/filterCard");
-const {isCardholder, isRequested, isPrivateEnabled, isKeeper} = require("../helphers/cardholder");
+const filterCard = require("../../helphers/filterCard");
+const {isCardholder, isRequested} = require("../../helphers/cardholder");
 
 const N = {
-    requested_card: "request_card",
+    requested_card: "requested_card",
     added_card: "added_card",
 };
 
 // ADD CARD TO CARDHOLDER
-router.post("/add/", async (req, res) => {
+router.put("/add/", async (req, res) => {
     const { friend, cardholder } = req.body;
 
-    const __user = await User.findOne({
-        email: req.session.__email,
-        password: req.session.__password
-    });
-    const f_card = await Card.findOne({"cardname": friend});
-    const c_card = await Card.findOne({"cardname": cardholder});
+    const __user = await User.findById(req.session._id);
+    const f_card = await Card.findOne({cardname: friend});
+    const c_card = await Card.findOne({cardname: cardholder});
 
 
     if( __user == null || c_card == null || f_card == null
         || __user.cards.find(c => c === cardholder) === undefined
         || __user.cards.find(c => c === friend) !== undefined) {
-        console.log("incorrect");
-        res.json({'status': 'incorrect'});
+        res.json({ok:false, status: 'incorrect'});
     }
     else if(await isCardholder(__user, friend)) {
         console.log("added");
-        res.json({status: "added"});
+        res.json({ok:true, status: "added"});
     }
     else if(await isRequested(__user, friend)) {
         console.log("requested");
-        res.json({status: "requested"});
+        res.json({ok: true, status: "requested"});
     }
     else  {
         if (c_card.cardholder === undefined) c_card.cardholder = {};
@@ -45,39 +42,35 @@ router.post("/add/", async (req, res) => {
         if (f_card.notifications === undefined) f_card.notifications = [];
 
         const date = new Date().getTime();
-        console.log(c_card.cardholder);
-        c_card.cardholder[friend] = {
-            private_enabled: false,
+
+        let newFriend = new Friend({
+            cardname: cardholder,
+            friend_cardname: friend,
             enabled: !f_card.is_private,
-            date: date,
-        };
-        //add to keepers f_card
-        f_card.keepers[cardholder] = {
             private_enabled: false,
-            enabled: !f_card.is_private,
-            date: date,
-        };
-        //add notification to f_card
-        f_card.notifications.unshift({
+            updated: date,
+            date: date
+        });
+        await newFriend.save();
+
+        c_card.friends_updated = date;
+        await c_card.save();
+
+        let notification = new Notification({
             type: f_card.is_private ? N.requested_card : N.added_card,
+            cardname: friend,
             from_cardname: cardholder,
             viewed: false,
-            date: date,
+            updated: date,
+            date: date
         });
+        await notification.save();
 
-        await Card.updateOne({cardname: cardholder}, {
-            cardholder: c_card.cardholder,
-            c_updated: date
-        });
-        await Card.updateOne({cardname: friend}, {
-            keepers: f_card.keepers,
-            k_updated: date,
-            notifications: f_card.notifications,
-            n_updated: date,
-        });
+        f_card.notifications_updated = date;
+        await f_card.save();
 
         console.log("add:", f_card.is_private ? "requested" : "added");
-        res.json({status: f_card.is_private ? "requested" : "added"});
+        res.json({ok: true, status: f_card.is_private ? "requested" : "added"});
     }
 });
 

@@ -1,21 +1,22 @@
 const express = require('express');
 const router = express.Router();
 
-const User = require("../../models/user");
+const User = require("../../models/User");
 
-router.get("/sync/", async(req, res) => {
-    const __user = await User.findOne({
-        email: req.session.__email,
-        password: req.session.__password
-    });
-
-    console.log(req.session)
-
+router.get("/:updated", async(req, res) => {
+    const {updated} = req.params;
+    const __user = await User.findById(req.session._id);
 
     if (__user !== null) {
-        res.json({status: "updated", updated: __user.updated || __user.date});
+        if (updated < __user.updated) {
+            res.json({ok: true, status: "new", user: __user});
+        } else if (updated > __user.updated) {
+            res.json({ok: true, status: "old"});
+        } else {
+            res.json({ok: true})
+        }
     } else {
-        res.json({status: "incorrect"})
+        res.json({ok: false, status: "incorrect"})
     }
 });
 

@@ -1,52 +1,65 @@
-const Card = require("../models/card");
+const Card = require("../models/Card");
+const Friend = require("../models/Friend");
 
 const isMyCard = async (user, cardname) => {
-    return user.cards.findIndex(c => c === cardname) >= 0;
+    return await user.cards.includes(cardname);
 };
 
 const isCardholder = async (user, cardname) => {
-    for (const myCardname of user.cards) {
-        const myCard = await Card.findOne({cardname: myCardname});
-        if (myCard != null && myCard.cardholder !== undefined
-            && myCard.cardholder[cardname] !== undefined) {
-            console.log("---------------", myCard.cardholder[cardname].enabled);
-            return myCard.cardholder[cardname].enabled
-        }
+    if (user !== null && cardname !== undefined) {
+        const friend = await Friend.findOne({ $and: [
+                {cardname: {$in: user.cards}},
+                {friend_cardname: cardname},
+                {enabled: true},
+            ]
+        });
+        return friend != null && friend.deleted !== true;
+    } else {
+        return false;
     }
-    return false
 };
 
 const isRequested = async (user, cardname) => {
-    for (const myCardname of user.cards) {
-        const myCard = await Card.findOne({cardname: myCardname});
-        if (myCard != null && myCard.cardholder !== undefined
-            && myCard.cardholder[cardname] !== undefined) {
-            return !myCard.cardholder[cardname].enabled
-        }
+    if (user !== null && cardname !== undefined) {
+        const friend = await Friend.findOne({ $and: [
+                {friend_cardname: {$in: user.cards}},
+                {cardname: cardname},
+                {enabled: false}
+            ]
+        });
+        return friend != null && friend.deleted !== true;
+    } else {
+        return false;
     }
-    return false
 };
 
 const isKeeper = async (user, cardname) => {
-    for (const myCardname of user.cards) {
-        const myCard = await Card.findOne({cardname: myCardname});
-        if (myCard != null && myCard.keepers !== undefined
-            && myCard.keepers[cardname] !== undefined) {
-            return myCard.cardholder[cardname].enabled
-        }
+    if (user !== null && cardname !== undefined) {
+        const friend = await Friend.findOne({ $and: [
+                {friend_cardname: {$in: user.cards}},
+                {cardname: cardname},
+                {enabled: true}
+            ]
+        });
+        return friend != null && friend.deleted !== true;
+    } else {
+        return false;
     }
-    return false
 };
 
 const isPrivateEnabled = async (user, cardname) => {
-    for (const myCardname of user.cards) {
-        const myCard = await Card.findOne({cardname: myCardname});
-        if (myCard != null && myCard.cardholder !== undefined
-            && myCard.cardholder[cardname] !== undefined) {
-            return myCard.cardholder[cardname].private_enabled
-        }
+    if (user !== null && cardname !== undefined) {
+        const friend = await Friend.findOne({ $and: [
+                {cardname: {$in: user.cards}},
+                {friend_cardname: cardname},
+                {enabled: true},
+                {private_enabled: true}
+            ]
+        });
+        return friend != null;
+    } else {
+        return false;
     }
-    return false
 };
 
 module.exports = {isMyCard, isCardholder, isRequested, isKeeper, isPrivateEnabled};

@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
+const Card = require("../models/Card");
+const User = require("../models/User");
 
-
-const Card = require("../models/card");
-const User = require("../models/user");
+const filterCard = require("../helphers/filterCard");
 
 const SEARCH_LIMIT = 100;
 // SEARCH
@@ -12,10 +12,9 @@ router.post("/", async (req, res) => {
 
     const { q, skip } = req.body;
 
-    const __user = await User.findOne({
-        email: req.session.__email,
-        password: req.session.__password
-    });
+    console.log(q, skip)
+
+    const user = await User.findById(req.session._id);
 
     const match = {"$or": [
             {cardname: new RegExp(`${q}.*`, 'i')},
@@ -36,8 +35,16 @@ router.post("/", async (req, res) => {
         { $skip: skip },
         { $limit: SEARCH_LIMIT },
     ]);
-    //TODO: check cards for friend,
-    res.json({cards: cards});
+
+    let searchCards = [];
+    for (const card of cards) {
+        let f_card = await filterCard(user, card, true);
+        if (f_card.status !== "incorrect") {
+            searchCards.push(f_card.card);
+        }
+    }
+
+    res.json({ok: true, q: q, cards: searchCards});
 });
 
 

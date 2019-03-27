@@ -75,17 +75,45 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 //Routes
-app.use('/kit/user/', require('./routes/user/user'));
-app.use('/kit/user/card/', require('./routes/user/card/card'));
-app.use('/kit/user/sync/', require('./routes/user/sync'));
-app.use('/kit/user/cs/', require('./routes/user/cs'));
-app.use('/kit/user/save_search/', require('./routes/user/save_search'));
+app.use('/kit/reg/', require('./routes/user/registration'));
+app.use('/kit/login/', require('./routes/user/login'));
+app.use('/kit/logout/', require('./routes/user/logout'));
 
-app.use('/kit/card/', require('./routes/card/card'));
-app.use('/kit/cardholder/', require('./routes/cardholder.routes'));
-app.use('/kit/search/', require('./routes/search.routes'));
-app.use('/kit/notifications/', require('./routes/notifications.routes'));
+app.use('/kit/user/cs/', require('./routes/user/cs'));
+app.use('/kit/user/sync/', require('./routes/user/sync'));
+app.use('/kit/user/save/', require('./routes/user/save'));
+
+app.use('/kit/user/card/create/', require('./routes/user/card/create'));
+app.use('/kit/user/card/', require('./routes/user/card/card'));
 app.use('/pic/', require('./routes/picture.routes'));
+app.use('/kit/card/', require('./routes/card/card'));
+
+app.use('/kit/notifications/', require('./routes/notifications/notifications.routes'));
+app.use('/kit/notifications/sync/', require('./routes/notifications/sync'));
+app.use('/kit/notifications/viewed/', require('./routes/notifications/viewed'));
+
+app.use('/kit/friends/', require('./routes/friends/friends.routes'));
+app.use('/kit/friends/sync/', require('./routes/friends/sync'));
+
+
+app.use('/kit/search/', require('./routes/search.routes'));
+app.use('/kit/user/save_search/', require('./routes/user/save_search'));
+app.use('/kit/user/sync_search/', require('./routes/user/sync_search'));
+
+app.use('/kit/cardholder/add/', require('./routes/cardholder/add'));
+app.use('/kit/cardholder/remove/', require('./routes/cardholder/remove'));
+app.use('/kit/cardholder/', require('./routes/cardholder/cardholder.routes'));
+
+
+app.use('/kit/share/', require('./routes/share'));
+
+
+// app.use('/kit/user/', require('./routes/user/user'));
+
+
+
+
+app.use('/kit/notification/', require('./routes/notifications/notifications.routes'));
 
 // Developments routes
 // app.use('/dev/translations/', express.static(path.join(__dirname, "../dev/translations")));
@@ -127,85 +155,15 @@ server.listen(app.get('port'), () => {
 // });
 
 
-const Card = require("../src/models/card");
-const User = require("../src/models/user");
+const Card = require("./models/Card");
+const User = require("./models/User");
 
-
-
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-/*
-var fs = require("fs");
-const importUsers = async () => {
-    console.log("\n *STARTING* \n");
-    var contents = fs.readFileSync("src/old_data/users.json");
-    var users = JSON.parse(contents);
-    for (const u of users) {
-        let __user = await User.findOne({username: u.username});
-        if (__user == null) {
-            let user = new User({
-                oldid: u.oldid,
-                username: u.username,
-                email: u.email,
-                password: u.password,
-                updated: u.updated,
-                enabled: true,
-                date: u.date,
-                cards: u.cards
-            });
-            await user.save();
-        }
-    }
-    console.log("\n *Users was saved* \n");
-    setTimeout(importCards, 1000);
-};
-const importCards = async () => {
-    console.log("\n *STARTING* \n");
-    var contents = fs.readFileSync("src/old_data/cards.json");
-    var cards = JSON.parse(contents);
-    for (const c of cards) {
-        let __card = await Card.findOne({cardname: c.cardname});
-        if (__card == null) {
-            const user = await User.findOne({cards: c.cardname});
-            let card = new Card({
-                uid: user._id,
-                oldid: c.oldid,
-                cardname: c.cardname,
-                is_private: c.is_private,
-                description: c.description,
-                name: c.name,
-                pictures: c.pictures,
-                updated: c.updated,
-                date: c.date,
-                contacts: c.contacts,
-                c_updated: c.c_updated,
-                cardholder: c.cardholder,
-                k_updated: c.k_updated,
-                keepers: c.keepers,
-                n_updated: c.n_updated,
-                notifications: c.notifications,
-            });
-            // console.log(card);
-            await card.save();
-        }
-    }
-    console.log("\n *Cards was saved* \n");
-};
-
-setTimeout(importUsers, 2000);
-*/
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
 
 // WebSocket
 var rc = io     //room card
     .of('/krc')
     .on('connection', socket => {
-        const room = socket.handshake['query']['cardname'];
+        const room = socket.handshake['query']['room'];
         socket.join(room);
         console.log('SOCKET >>> user joined to room %s', room);
 
@@ -213,18 +171,28 @@ var rc = io     //room card
             socket.leave(room);
             console.log('SOCKET >>> user disconnected from room %s', room);
         });
-        socket.on('c_updated', msg => {
-            console.log(">>>>>> c_updated", room);
-            rc.in(room).emit('c_updated', msg);
-        });
+
+
         socket.on('updated', async msg => {
-            console.log(">>>>>> updated", room);
-            const card = await Card.findOne({cardname: room});
-            if (card != null) {
-                msg = card.updated
-            }
             rc.in(room).emit('updated', msg);
         });
+
+        socket.on('friends_updated', msg => {
+            console.log(">>>>>> friends_updated", room);
+            rc.in(room).emit('friends_updated', msg);
+        });
+        socket.on('notifications_updated', msg => {
+            console.log(">>>>>> notifications_updated", room);
+            rc.in(room).emit('notifications_updated', msg);
+        });
+
+        socket.on('search_updated', async msg => {
+            console.log(">>>>>> search_updated", room, msg);
+            rc.in(room).emit('search_updated', msg);
+        });
+
+
+
         socket.on('created', msg => {
             console.log(">>>>>> created", room);
             rc.in(room).emit('created');
@@ -238,9 +206,14 @@ var rc = io     //room card
 
 
 
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
 
-
+// require('./__test__/moveNotifications');
+// require('./__test__/moveFriends');
 
 
 

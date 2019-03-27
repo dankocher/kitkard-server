@@ -1,20 +1,19 @@
-const {isCardholder, isPrivateEnabled, isKeeper} = require("../helphers/cardholder");
+const {isCardholder, isPrivateEnabled, isKeeper, isMyCard} = require("../helphers/cardholder");
 
-const filterCard = async (user, card) => {
+const filterCard = async (user, card, isSearch) => {
     if (card == null) {
         return({status: "incorrect"})
     }
     else // User Card
-    if (user != null && user.cards !== undefined && user.cards.find(c => {return c === card.cardname})) {
-        return({status: "cards", card: card});
+    if (user != null && user.cards !== undefined && await isMyCard(user, card.cardname))
+    {
+        return isSearch ? ({status: "incorrect"}) : ({status: "cards", card: card});
     }
     else // Cardholder
-    if (user != null && isCardholder(user, card))
+    if (user != null && await isCardholder(user, card.cardname))
     {
-        let contacts = card.contacts !== undefined ? card.contacts.ids !== undefined : {byId: {}, ids: []};
-        if (isPrivateEnabled(user, card)) {
-            contacts = filterPrivateContacts(contacts);
-        }
+        let contacts = isSearch ? undefined :
+            (await isPrivateEnabled(user, card.cardname) ? await filterPrivateContacts(card.contacts) : card.contacts);
 
         return({status: "cardholder", card: {
                 cardname: card.cardname,
@@ -27,10 +26,9 @@ const filterCard = async (user, card) => {
             }});
     }
     else // Keeper
-    if (user != null && (isKeeper(user, card) && !card.is_private))
+    if (user != null && (await isKeeper(user, card.cardname) && !card.is_private))
     {
-        let contacts = card.contacts !== undefined ? card.contacts.ids !== undefined : {byId: {}, ids: []};
-        contacts = filterPrivateContacts(contacts);
+        let contacts = isSearch ? undefined : await filterPrivateContacts(card.contacts);
 
         return({status: "keepers", card: {
                 cardname: card.cardname,
@@ -43,7 +41,7 @@ const filterCard = async (user, card) => {
             }});
     }
     else // Private
-    if (card.is_private !== undefined && card.is_private) {
+    if (card.is_private) {
         return({status: "private", card: {
                 cardname: card.cardname,
                 is_private: card.is_private,
@@ -52,10 +50,9 @@ const filterCard = async (user, card) => {
     }
     else // Public
     {
-        let contacts = card.contacts !== undefined ? card.contacts.ids !== undefined : {byId: {}, ids: []};
-        contacts = filterPrivateContacts(contacts);
+        let contacts = isSearch ? undefined : await filterPrivateContacts(card.contacts);
 
-        return({status: "keepers", card: {
+        return({status: "public", card: {
                 cardname: card.cardname,
                 name: card.name,
                 description: card.description,
@@ -67,17 +64,15 @@ const filterCard = async (user, card) => {
     }
 };
 
-const filterPrivateContacts = (contacts) => {
-
+const filterPrivateContacts = async (contacts) => {
     const p_contacts = {byId: {}, ids: []};
-    if (contacts.ids !== undefined && contacts.ids.isPrototypeOf(Array)) {
+    if (contacts !== undefined && contacts.ids !== undefined && contacts.ids.length > 0) {
         for (const id of contacts.ids) {
             const contact = contacts.byId[id];
             if (!contact.is_private) {
                 p_contacts.byId[id] = contact;
-                p_contacts.ids.push(id);
+                await p_contacts.ids.push(id);
             }
-
         }
     }
     return p_contacts;

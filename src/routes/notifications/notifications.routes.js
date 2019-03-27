@@ -1,38 +1,26 @@
 const express = require('express');
 const router = express.Router();
 
-const User = require("../models/user");
-const Card = require("../models/card");
-const Session = require("../models/Session");
+const User = require("../../models/User");
+const Card = require("../../models/Card");
+const Notification = require("../../models/Notification");
+const Session = require("../../models/Session");
 
-const filterCard = require("../helphers/filterCard");
-const {isMyCard, isCardholder, isRequested, isPrivateEnabled, isKeeper} = require("../helphers/cardholder");
+const filterCard = require("../../helphers/filterCard");
+const {isMyCard, isCardholder, isRequested, isPrivateEnabled, isKeeper} = require("../../helphers/cardholder");
 
 const N = {
-    requested_card: "request_card",
+    requested_card: "requested_card",
     added_card: "added_card",
 };
-
-// SET NOTIFICATION VIEWED
-router.post("/viewed/", async (req, res) => {
-    const { cardname, notification} = req.body;
-
-    const __user = await User.findOne({
-        email: req.session.__email,
-        password: req.session.__password
-    });
-
-    if (isMyCard(__user, cardname)) {
-        await Card.updateOne({cardname: cardname,
-            'notifications.from_cardname': notification.from_cardname,
-            'notifications.type': notification.type,
-            'notifications.date': notification.date
-        },{
-            $set: {'notifications.$.viewed': true}
-        });
-        res.json({status: "viewed"});
+// GET ALL NOTIFICATIONS
+router.get("/", async (req, res) => {
+    const __user = await User.findById(req.session._id);
+    if (__user !== null) {
+        let notifications = await Notification.find({cardname: {$in: __user.cards}});
+        res.json({ok: true, notifications: notifications})
     } else {
-        res.json({status: "incorrect"});
+        res.json({ok: false});
     }
 });
 

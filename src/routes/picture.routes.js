@@ -5,8 +5,8 @@ const sha256 = require('sha256');
 const fs = require('fs');
 const sharp = require('sharp');
 
-const User = require("../models/user");
-const Card = require("../models/card");
+const User = require("../models/User");
+const Card = require("../models/Card");
 
 const PATH = '/var/www/kitkard/pictures/';
 router.get("/:size/:pictureId", async (req, res) => {
@@ -19,13 +19,8 @@ router.get("/:size/:pictureId", async (req, res) => {
         if (err) {
             fs.readFile(path, function (err2, content2) {
                 if (err2) {
-                    fs.readFile(path, function (err2, content2) {
-                        res.writeHead(200,{'Content-type':'image/jpg'});
-                        res.end(PATH + 'logo_gray.png');
-                    });
-                    // res.writeHead(400, {'Content-type':'text/html'});
-                    // console.log(err2);
-                    // res.end("No such image");
+                    res.writeHead(404);
+                    res.end();
                 } else {
                     res.writeHead(200,{'Content-type':'image/jpg'});
                     res.end(content2);
@@ -38,6 +33,29 @@ router.get("/:size/:pictureId", async (req, res) => {
         }
     });
 });
+
+router.get("/ex/:size/:pictureId", async (req, res) => {
+    const {size, pictureId} = req.params;
+    const _size = size === "l" || size === undefined ? "m" : size;
+    const path = PATH + pictureId;
+    const pathSized = PATH + pictureId + "." + _size;
+
+    fs.readFile(pathSized, async (err, content) => {
+        if (err) {
+            fs.readFile(path, async (err2, content2) => {
+                if (err2) {
+                    res.json({ok: false})
+                } else {
+                    res.json({ok: true});
+                }
+            })
+        } else {
+            res.json({ok: true});
+        }
+    });
+});
+
+
 
 router.put("/:cardname/:size", async (req, res) => {
     const {size, cardname} = req.params;
@@ -81,13 +99,10 @@ router.put("/:cardname/:size", async (req, res) => {
 
 router.delete("/:cardname/:picture", async(req, res) => {
     const {cardname, picture} = req.params;
-    const user = User.findOne({
-        email: req.session.__email,
-        password: req.session.__password
-    });
+    const user = User.findById(req.session._id);
     const c_card = user !== null && user.cards !== undefined ? user.cards.find(c => c === cardname) : null;
     if (user == null && c_card !== null) {
-        req.json({status: "failed"})
+        req.json({ok: false, status: "failed"})
     } else {
         await deleteFile(PATH + picture + ".s");
         await deleteFile(PATH + picture + ".m");
@@ -95,14 +110,14 @@ router.delete("/:cardname/:picture", async(req, res) => {
 
         const card = await Card.findOne({cardname: cardname});
         // console.log(card);
-        const index = card.pictures.indexOf(picture);
+        const index = await card.pictures.indexOf(picture);
         if (index !== -1) {
             card.pictures.splice(index, 1);
             card.updated = new Date().getTime();
             await card.save();
         }
         console.log(card.updated);
-        res.json({status: "ok", updated: card.updated})
+        res.json({ok: true, status: "ok", updated: card.updated})
     }
 });
 

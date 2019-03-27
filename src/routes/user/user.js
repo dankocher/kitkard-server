@@ -1,82 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const User = require("../../models/user");
+const User = require("../../models/User");
 const Session = require("../../models/Session");
-
-// REGISTRATION OR LOGIN IF EXIST
-router.post("/", async (req, res) => {
-    //TODO: check user with session
-    const { email, password, from } = req.body;
-
-    console.log(email, password, from)
-
-    var user = await User.findOne({email: new RegExp(email, 'i')});
-
-    if (user == null) { //REGISTER
-        user = new User({
-            email,
-            password,
-            from,
-            enabled: true,
-            date: new Date().getTime()
-        });
-        await user.save();
-
-        req.session.__email = email;
-        req.session.__password = password;
-
-        res.json({status: "registered", "session": req.sessionID});
-    }
-    else    //LOGIN
-    {
-        if (from === "g" || from === "f") {
-            user = await User.findOne({
-                "email": email
-            });
-        } else {
-            user = await User.findOne({
-                "email": email,
-                "password": password
-            });
-        }
-        console.log("email", email);
-        console.log("from", from);
-        console.log("user", user);
-        if (user != null && user.enabled === true) {
-            req.session.__email = email;
-            req.session.__password = user.password;
-            res.json({status: "login", "session": req.sessionID});
-        } else
-        if (user != null && user.disabled === false) {
-            res.json({status: "disabled"});
-        } else {
-            res.json({status: "incorrect"});
-        }
-    }
-});
-
-//GET USER BY SESSION
-router.post('/:session', async (req, res) => {
-    const { email, password } = req.body;
-    const { session } = req.params;
-
-    console.log(session, req.sessionID)
-
-    if (session !== res.sessionID) {
-        req.session.__email = email;
-        req.session.__password = password;
-    }
-
-
-    console.log(req.session)
-    const dbUser = await User.findOne({
-        email: req.session.__email,
-        password: req.session.__password
-    });
-    console.log(dbUser)
-    res.json({ user: dbUser, session: req.sessionID });
-});
 
 router.post("/update/", async(req, res) => {
     const __user = await User.findOne({
@@ -86,27 +12,6 @@ router.post("/update/", async(req, res) => {
 
     if (__user == null) {
         res.json({status: "incorrect"})
-    }
-});
-
-//GET USER BY ID
-router.get("/:email/:password", async (req, res) => {
-    const { email, password } = req.params;
-
-    const user = await User.findOne({
-        "email": email,
-        "password": password
-    });
-
-    if (user != null && user.enabled === true) {
-        req.session.__email = email;
-        req.session.__password = password;
-        res.json({status: "login", "session": req.sessionID});
-    } else
-    if (user != null && user.disabled === false) {
-        res.json({status: "disabled"});
-    } else {
-        res.json({status: "incorrect"});
     }
 });
 

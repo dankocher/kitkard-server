@@ -7,20 +7,21 @@ const CardSchema = new Schema({
     name: {type: String, required: false },
     description: {type: String, required: false} ,
     is_private: { type: Boolean, required: true },
-    date: { type: Number, required: true },
-    updated: { type: Number, required: false},
     contacts: { type: Object, required: false},
     pictures: { type: Array, required: false},
+    date: { type: Number, required: true },
 
+    oldid: {type: String, required: false},
+    updated: { type: Number, required: false},
+    friends_updated: {type: Number, required: false},
+    notifications_updated: {type: Number, required: false},
+
+
+    //remove this
     cardholder: { type: Object, required: false},
     c_updated: { type: Number, required: false},
-
-    keepers: { type: Object, required: false},
-    k_updated: { type: Number, required: false},
-
     notifications: { type: Array, required: false},
     n_updated: { type: Number, required: false},
-    oldid: {type: String, required: false},
 });
 
 module.exports = mongoose.model('Card', CardSchema, 'cards');

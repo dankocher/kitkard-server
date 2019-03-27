@@ -2,45 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e80813c8-6d6d-4084-81d9-228c6630fbb0" name="Default Changelist" comment="import user function and fix minor errors">
-      <change afterPath="$PROJECT_DIR$/src/dev_data/kitkard.cards.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dev_data/kitkard.users.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/old_data/cards.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/old_data/users.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/__test__/importFromJson.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/__test__/moveFriends.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/__test__/moveNotifications.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/Friend.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/Notification.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/cardholder/add.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/cardholder/remove.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/friends/friends.routes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/friends/sync.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/notifications/sync.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/notifications/viewed.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/share.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/user/card/create.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/user/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/user/logout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/user/registration.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/user/save.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/user/sync_search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/removeByKey.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helphers/cardholder.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helphers/cardholder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helphers/filterCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helphers/filterCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/old_data/cards.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/old_data/cards.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/old_data/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/old_data/users.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/card/card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/card/card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/cardholder.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/cardholder/cardholder.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/notifications.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/notifications/notifications.routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/picture.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/picture.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/fonts/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/fonts/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/fonts/icomoon.eot" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/fonts/icomoon.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/fonts/icomoon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/fonts/icomoon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/fonts/icomoon.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/fonts/icomoon.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/fonts/icomoon.woff" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/fonts/icomoon.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/icons.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/icons.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/material-icons.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/material-icons.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/materialize.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/materialize.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/materialize.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/materialize.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/favicon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/materialize.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/js/materialize.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/materialize.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/js/materialize.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/precache-manifest.36e04c04740466c0888d076fd91f16ab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/precache-manifest.36e04c04740466c0888d076fd91f16ab.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/robots.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/service-worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/css/main.2b816b1b.chunk.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/static/css/main.2b816b1b.chunk.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/css/main.2b816b1b.chunk.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/static/css/main.2b816b1b.chunk.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/js/1.cec31ec3.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/static/js/1.cec31ec3.chunk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/js/1.cec31ec3.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/static/js/1.cec31ec3.chunk.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/js/main.b1790b56.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/static/js/main.b1790b56.chunk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/js/main.b1790b56.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/static/js/main.b1790b56.chunk.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/js/runtime~main.229c360f.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/static/js/runtime~main.229c360f.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/js/runtime~main.229c360f.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/static/js/runtime~main.229c360f.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/media/google.477376d3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/static/media/google.477376d3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/media/kitkard_white.0c46c9bd.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/static/media/kitkard_white.0c46c9bd.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/media/logo_white.304240bb.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/static/media/logo_white.304240bb.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/search.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/search.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/user.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/user/card/card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user/card/card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/user/cs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user/cs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/user/save_search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user/save_search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/user/sync.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user/sync.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/user/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user/user.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -52,63 +51,53 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5249406">
+    <splitter split-orientation="horizontal" split-proportion="0.6203814">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="800">
-                  <caret line="240" lean-forward="true" selection-start-line="240" selection-end-line="240" />
+                <state relative-caret-position="1748">
+                  <caret line="90" column="68" selection-start-line="90" selection-start-column="68" selection-end-line="90" selection-end-column="68" />
                   <folding>
-                    <element signature="e#4433#5102#0" />
-                    <element signature="e#5170#6319#0" />
+                    <element signature="e#1015#1768#0" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/routes/picture.routes.js">
+            <entry file="file://$PROJECT_DIR$/src/routes/notifications/notifications.routes.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="112">
-                  <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-                  <folding>
-                    <element signature="e#992#2461#0" />
-                    <element signature="e#2521#3440#0" />
-                    <element signature="e#3479#3687#0" />
-                  </folding>
+                <state relative-caret-position="552">
+                  <caret line="24" column="3" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/dev_data/kitkard.cards.json">
+            <entry file="file://$PROJECT_DIR$/src/routes/friends/sync.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-4807">
-                  <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+                <state relative-caret-position="414">
+                  <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
                 </state>
               </provider>
             </entry>
           </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/old_data/cards.json">
+            <entry file="file://$PROJECT_DIR$/src/routes/notifications/viewed.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="799">
-                  <caret column="1712735" selection-start-column="1712735" selection-end-column="1712735" />
+                <state relative-caret-position="292">
+                  <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/models/card.js">
+            <entry file="file://$PROJECT_DIR$/src/routes/notifications/sync.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="506">
-                  <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
+                <state relative-caret-position="598">
+                  <caret line="26" column="100" selection-start-line="26" selection-start-column="100" selection-end-line="26" selection-end-column="100" />
                 </state>
               </provider>
             </entry>
@@ -116,17 +105,102 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/routes/user/user.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="46">
-                  <caret line="2" selection-start-line="2" selection-end-line="2" />
+                <state relative-caret-position="391">
+                  <caret line="17" column="16" selection-end-line="47" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/models/user.js">
+            <entry file="file://$PROJECT_DIR$/src/routes/user/save.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="33">
-                  <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+                <state relative-caret-position="230">
+                  <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/routes/card/card.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="460">
+                  <caret line="20" column="3" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/routes/user/card/create.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="874">
+                  <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/routes/cardholder/add.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2047">
+                  <caret line="89" selection-start-line="89" selection-end-line="89" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/models/Friend.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="161">
+                  <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/models/Notification.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="276">
+                  <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/models/User.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="391">
+                  <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/models/Card.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="345">
+                  <caret line="15" column="19" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="19" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/routes/user/login.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="782">
+                  <caret line="34" column="26" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/routes/user/logout.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="391">
+                  <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
                 </state>
               </provider>
             </entry>
@@ -152,9 +226,27 @@
       <find>listen</find>
       <find>Regex</find>
       <find>__user</find>
-      <find>filterCard</find>
       <find>picture</find>
       <find>sessionId</find>
+      <find>models/user</find>
+      <find>Regexp</find>
+      <find>cs</find>
+      <find>/:session&quot;</find>
+      <find>/:session'</find>
+      <find>cs/:session'</find>
+      <find>json</find>
+      <find>filterCard</find>
+      <find>true</find>
+      <find>from</find>
+      <find>auth</find>
+      <find>res.json</find>
+      <find>expires</find>
+      <find>cardholder</find>
+      <find>Card.delete</find>
+      <find>./routes/notifications.routes</find>
+      <find>sync_sear</find>
+      <find>isCardholder</find>
+      <find>user</find>
     </findStrings>
     <replaceStrings>
       <replace>:</replace>
@@ -174,8 +266,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/app/index.js" />
-        <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/src/public/index.html" />
         <option value="$PROJECT_DIR$/src/app/App.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -183,34 +273,58 @@
         <option value="$PROJECT_DIR$/src/models/Session.js" />
         <option value="$PROJECT_DIR$/src/routes/user.card.routes.js" />
         <option value="$PROJECT_DIR$/src/routes/search.route.js" />
-        <option value="$PROJECT_DIR$/src/routes/search.routes.js" />
         <option value="$PROJECT_DIR$/src/routes/card.routes.js" />
-        <option value="$PROJECT_DIR$/src/routes/cardholder.routes.js" />
-        <option value="$PROJECT_DIR$/src/helphers/filterCard.js" />
-        <option value="$PROJECT_DIR$/src/helphers/cardholder.js" />
-        <option value="$PROJECT_DIR$/src/routes/notifications.routes.js" />
         <option value="$PROJECT_DIR$/dev/translates/index.html" />
         <option value="$PROJECT_DIR$/src/routes/dev.translations.routes.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/routes/user.routes.js" />
         <option value="$PROJECT_DIR$/src/routes/user/card.js" />
         <option value="$PROJECT_DIR$/src/routes/user/card/user.card.routes.js" />
-        <option value="$PROJECT_DIR$/src/routes/user/save_search.js" />
-        <option value="$PROJECT_DIR$/src/routes/user/sync.js" />
-        <option value="$PROJECT_DIR$/src/routes/user/cs.js" />
-        <option value="$PROJECT_DIR$/src/routes/user/user.js" />
         <option value="$PROJECT_DIR$/src/models/user.js" />
         <option value="$PROJECT_DIR$/src/models/card.js" />
+        <option value="$PROJECT_DIR$/src/routes/user.routes.js" />
+        <option value="$PROJECT_DIR$/src/routes/user/logout.js" />
+        <option value="$PROJECT_DIR$/src/routes/user/cs.js" />
+        <option value="$PROJECT_DIR$/src/routes/card/card.js" />
+        <option value="$PROJECT_DIR$/src/routes/user/card/card.js" />
+        <option value="$PROJECT_DIR$/src/routes/notifications.routes.js" />
+        <option value="$PROJECT_DIR$/src/routes/friends.routes.js" />
+        <option value="$PROJECT_DIR$/src/helphers/filterCard.js" />
+        <option value="$PROJECT_DIR$/src/models/Card.js" />
+        <option value="$PROJECT_DIR$/src/routes/cardholder.routes.js" />
         <option value="$PROJECT_DIR$/src/routes/picture.routes.js" />
+        <option value="$PROJECT_DIR$/src/routes/user/registration.js" />
+        <option value="$PROJECT_DIR$/src/routes/user/login.js" />
+        <option value="$PROJECT_DIR$/src/utils/removeByKey.js" />
+        <option value="$PROJECT_DIR$/src/routes/user/save_search.js" />
+        <option value="$PROJECT_DIR$/src/routes/search.routes.js" />
+        <option value="$PROJECT_DIR$/src/routes/cardholder/cardholder.routes.js" />
+        <option value="$PROJECT_DIR$/src/models/User.js" />
+        <option value="$PROJECT_DIR$/src/models/Friend.js" />
+        <option value="$PROJECT_DIR$/src/routes/user/sync_search.js" />
+        <option value="$PROJECT_DIR$/src/__test__/moveFriends.js" />
+        <option value="$PROJECT_DIR$/src/helphers/cardholder.js" />
+        <option value="$PROJECT_DIR$/src/routes/cardholder/add.js" />
+        <option value="$PROJECT_DIR$/src/routes/cardholder/remove.js" />
+        <option value="$PROJECT_DIR$/src/routes/user/sync.js" />
+        <option value="$PROJECT_DIR$/src/routes/user/user.js" />
+        <option value="$PROJECT_DIR$/src/routes/user/save.js" />
+        <option value="$PROJECT_DIR$/src/routes/user/card/create.js" />
+        <option value="$PROJECT_DIR$/src/__test__/moveNotifications.js" />
+        <option value="$PROJECT_DIR$/src/models/Notification.js" />
+        <option value="$PROJECT_DIR$/src/routes/share.js" />
+        <option value="$PROJECT_DIR$/src/routes/notifications/sync.js" />
+        <option value="$PROJECT_DIR$/src/routes/friends/sync.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/routes/notifications/notifications.routes.js" />
+        <option value="$PROJECT_DIR$/src/routes/notifications/viewed.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="34" />
-    <option name="y" value="344" />
-    <option name="width" value="1902" />
-    <option name="height" value="519" />
+    <option name="x" value="4" />
+    <option name="y" value="32" />
+    <option name="width" value="1272" />
+    <option name="height" value="694" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -238,13 +352,55 @@
               <item name="kitkard-server" type="b2602c69:ProjectViewProjectNode" />
               <item name="kitkard-server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dev_data" type="462c0819:PsiDirectoryNode" />
+              <item name="__test__" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kitkard-server" type="b2602c69:ProjectViewProjectNode" />
               <item name="kitkard-server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kitkard-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kitkard-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kitkard-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kitkard-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="card" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kitkard-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kitkard-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="friends" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kitkard-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kitkard-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="notifications" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kitkard-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kitkard-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kitkard-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kitkard-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="card" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -257,21 +413,28 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="javascript.nodejs.core.library.configured.version" value="8.10.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553719091965" />
+    <property name="javascript.nodejs.core.library.configured.version" value="11.12.0" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Kitkard/Kitkard" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/routes/friends" />
+      <recent name="$PROJECT_DIR$/src/routes/notifications" />
+      <recent name="$PROJECT_DIR$/src/routes/cardholder" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/routes/user/card" />
-      <recent name="$PROJECT_DIR$/src/routes/card" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/routes/notifications" />
+      <recent name="$PROJECT_DIR$/src/routes/friends" />
+      <recent name="$PROJECT_DIR$/src/routes/cardholder" />
       <recent name="$PROJECT_DIR$/src/routes/user" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -330,7 +493,27 @@
       <workItem from="1551621788299" duration="5057000" />
       <workItem from="1551814621256" duration="370000" />
       <workItem from="1551815166963" duration="30000" />
-      <workItem from="1551815416520" duration="9516000" />
+      <workItem from="1551815416520" duration="10740000" />
+      <workItem from="1553153291368" duration="747000" />
+      <workItem from="1553154119979" duration="10044000" />
+      <workItem from="1553202043146" duration="2358000" />
+      <workItem from="1553241845858" duration="2779000" />
+      <workItem from="1553260925818" duration="755000" />
+      <workItem from="1553282246301" duration="790000" />
+      <workItem from="1553283058114" duration="24000" />
+      <workItem from="1553283141222" duration="156000" />
+      <workItem from="1553327732035" duration="11580000" />
+      <workItem from="1553587470960" duration="15809000" />
+      <workItem from="1553609341463" duration="641000" />
+      <workItem from="1553611506429" duration="2186000" />
+      <workItem from="1553614390973" duration="599000" />
+      <workItem from="1553622401827" duration="1612000" />
+      <workItem from="1553624305702" duration="2327000" />
+      <workItem from="1553627441309" duration="3669000" />
+      <workItem from="1553670046287" duration="2983000" />
+      <workItem from="1553708178472" duration="6816000" />
+      <workItem from="1553722695956" duration="1554000" />
+      <workItem from="1553725267610" duration="261000" />
     </task>
     <task id="LOCAL-00001" summary="Added git">
       <created>1544009588849</created>
@@ -448,12 +631,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165086000" />
+    <option name="totallyTimeSpent" value="238737000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="32" width="1928" height="1052" extended-state="6" />
+    <frame x="0" y="32" width="1920" height="1048" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4994618" visible="true" weight="0.11228255" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4994618" visible="true" weight="0.1117554" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" sideWeight="0.50053823" side_tool="true" weight="0.18393068" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -462,9 +646,9 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="UI Designer" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32991317" />
       <window_info anchor="bottom" x="12" y="672" width="2539" height="236" id="Run" order="2" sideWeight="0.5013785" side_tool="true" weight="0.2667719" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39936858" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -472,7 +656,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5013785" side_tool="true" weight="0.2667719" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4986215" weight="0.2667719" />
-      <window_info anchor="bottom" id="RNConsole" order="11" />
+      <window_info anchor="bottom" id="RNConsole" order="11" weight="0.32991317" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -507,38 +691,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="import user function and fix minor errors" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/index.html" />
-    <entry file="file://$PROJECT_DIR$/src/app/index.js" />
-    <entry file="file://$PROJECT_DIR$/webpack.config.js" />
-    <entry file="file://$PROJECT_DIR$/.babelrc" />
-    <entry file="file://$PROJECT_DIR$/install.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="16" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="234">
-            <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/App.js" />
     <entry file="file://$PROJECT_DIR$/public/js/materialize.js" />
     <entry file="file://$PROJECT_DIR$/public/js/materialize.min.js" />
     <entry file="file://$PROJECT_DIR$/public/css/fonts/icomoon.svg" />
@@ -563,38 +715,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="6" column="43" lean-forward="true" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/search.routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="35" lean-forward="true" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/helphers/cardholder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
-          <folding>
-            <element signature="e#531#854#0" />
-            <element signature="e#530#849#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/helphers/filterCard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" lean-forward="true" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/notifications.routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="6" lean-forward="true" selection-end-line="73" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -626,117 +746,268 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/cardholder.routes.js">
+    <entry file="file://$PROJECT_DIR$/src/old_data/cards.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/user.routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="14" column="34" lean-forward="true" selection-end-line="189" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/user/card/card.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/user/save_search.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/user/sync.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/user/cs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/card/card.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dev_data/kitkard.users.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/card.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/user/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        <state relative-caret-position="795">
+          <caret column="1713922" selection-start-column="1713922" selection-end-column="1713922" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dev_data/kitkard.cards.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4807">
+        <state relative-caret-position="230">
           <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/old_data/cards.json">
+    <entry file="file://$PROJECT_DIR$/src/dev_data/kitkard.users.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret column="1712735" selection-start-column="1712735" selection-end-column="1712735" />
+        <state relative-caret-position="2139">
+          <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/helphers/filterCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/__test__/importFromJson.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/user/cs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/user/card/card.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="25" column="26" lean-forward="true" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/picture.routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+        <state relative-caret-position="726">
+          <caret line="117" column="9" lean-forward="true" selection-start-line="117" selection-start-column="9" selection-end-line="118" selection-end-column="34" />
           <folding>
-            <element signature="e#992#2461#0" />
-            <element signature="e#2521#3440#0" />
-            <element signature="e#3479#3687#0" />
+            <element signature="e#1234#1805#0" />
+            <element signature="e#1862#3331#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/friends/friends.routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/user/save_search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="897">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/removeByKey.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/search.routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/cardholder/cardholder.routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-619">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/__test__/moveFriends.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/cardholder/remove.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="49" column="13" lean-forward="true" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/user/sync_search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/helphers/cardholder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1000">
+          <caret line="64" column="40" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/user.routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="45" lean-forward="true" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/__test__/moveNotifications.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="25" column="47" lean-forward="true" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/share.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="938">
+          <caret line="35" column="9" lean-forward="true" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/user/registration.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/user/sync.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="240" lean-forward="true" selection-start-line="240" selection-end-line="240" />
+        <state relative-caret-position="1748">
+          <caret line="90" column="68" selection-start-line="90" selection-start-column="68" selection-end-line="90" selection-end-column="68" />
           <folding>
-            <element signature="e#4433#5102#0" />
-            <element signature="e#5170#6319#0" />
+            <element signature="e#1015#1768#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/notifications/notifications.routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="24" column="3" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/friends/sync.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/notifications/sync.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="26" column="100" selection-start-line="26" selection-start-column="100" selection-end-line="26" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/user/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="16" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/user/save.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/card/card.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="20" column="3" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/user/card/create.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="874">
+          <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/cardholder/add.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2047">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/Friend.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/Notification.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/Card.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/user/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="34" column="26" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/user/logout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/User.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/notifications/viewed.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>

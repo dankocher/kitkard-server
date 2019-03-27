@@ -10,7 +10,8 @@ const UserSchema = new Schema({
     date: {type: Number, required: true},
     updated: {type: Number, required: false},
     search: {type: Array, required: false},
-    from: {type: String, required: false},
+    search_updated: {type: Number, required: false},
+    auth: {type: String, required: false},
     oldid: {type: String, required: false},
 });
 
