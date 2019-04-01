@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e80813c8-6d6d-4084-81d9-228c6630fbb0" name="Default Changelist" comment="import user function and fix minor errors">
+      <change afterPath="$PROJECT_DIR$/src/routes/notifications/action.route.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/user/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/user/registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user/registration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/notifications/notifications.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/notifications/notifications.routes.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,20 +18,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/routes/user/login.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/routes/notifications/action.route.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13">
-              <caret line="15" column="39" lean-forward="true" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+            <state relative-caret-position="321">
+              <caret line="28" column="30" lean-forward="true" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/routes/user/registration.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+            <state relative-caret-position="368">
+              <caret line="105" column="85" lean-forward="true" selection-start-line="105" selection-start-column="85" selection-end-line="105" selection-end-column="85" />
+              <folding>
+                <element signature="e#1015#1768#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -95,7 +98,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/public/index.html" />
         <option value="$PROJECT_DIR$/src/app/App.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/Readme.md" />
@@ -141,11 +143,12 @@
         <option value="$PROJECT_DIR$/src/routes/share.js" />
         <option value="$PROJECT_DIR$/src/routes/notifications/sync.js" />
         <option value="$PROJECT_DIR$/src/routes/friends/sync.js" />
-        <option value="$PROJECT_DIR$/src/routes/notifications/notifications.routes.js" />
         <option value="$PROJECT_DIR$/src/routes/notifications/viewed.js" />
-        <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/routes/user/login.js" />
         <option value="$PROJECT_DIR$/src/routes/user/registration.js" />
+        <option value="$PROJECT_DIR$/src/routes/notifications/notifications.routes.js" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/routes/notifications/action.route.js" />
       </list>
     </option>
   </component>
@@ -177,6 +180,19 @@
               <item name="kitkard-server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="kitkard-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kitkard-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kitkard-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kitkard-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="notifications" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -198,18 +214,18 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/routes/notifications" />
+      <recent name="$PROJECT_DIR$/src/routes/friends" />
+      <recent name="$PROJECT_DIR$/src/routes/cardholder" />
+      <recent name="$PROJECT_DIR$/src/routes/user" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/routes/friends" />
       <recent name="$PROJECT_DIR$/src/routes/notifications" />
       <recent name="$PROJECT_DIR$/src/routes/cardholder" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/routes/user/card" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/routes/notifications" />
-      <recent name="$PROJECT_DIR$/src/routes/friends" />
-      <recent name="$PROJECT_DIR$/src/routes/cardholder" />
-      <recent name="$PROJECT_DIR$/src/routes/user" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -290,7 +306,7 @@
       <workItem from="1553722695956" duration="1554000" />
       <workItem from="1553725267610" duration="1535000" />
       <workItem from="1554026944106" duration="2885000" />
-      <workItem from="1554115925336" duration="926000" />
+      <workItem from="1554115925336" duration="5932000" />
     </task>
     <task id="LOCAL-00001" summary="Added git">
       <created>1544009588849</created>
@@ -408,7 +424,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="243822000" />
+    <option name="totallyTimeSpent" value="248828000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="32" width="1920" height="1048" extended-state="6" />
@@ -468,7 +484,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="import user function and fix minor errors" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/materialize.js" />
     <entry file="file://$PROJECT_DIR$/public/js/materialize.min.js" />
     <entry file="file://$PROJECT_DIR$/public/css/fonts/icomoon.svg" />
     <entry file="file://$PROJECT_DIR$/public/css/icons.css" />
@@ -701,23 +716,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#1015#1768#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/notifications/notifications.routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="24" column="3" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/friends/sync.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -783,8 +781,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/user/registration.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        <state relative-caret-position="97">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/notifications/notifications.routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="105" column="85" lean-forward="true" selection-start-line="105" selection-start-column="85" selection-end-line="105" selection-end-column="85" />
+          <folding>
+            <element signature="e#1015#1768#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/notifications/action.route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="28" column="30" lean-forward="true" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
         </state>
       </provider>
     </entry>

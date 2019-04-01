@@ -103,6 +103,7 @@ app.use('/kit/card/', require('./routes/card/card'));
 app.use('/kit/notifications/', require('./routes/notifications/notifications.routes'));
 app.use('/kit/notifications/sync/', require('./routes/notifications/sync'));
 app.use('/kit/notifications/viewed/', require('./routes/notifications/viewed'));
+app.use('/kit/notification/action/', require('./routes/notifications/action.route'));
 
 app.use('/kit/friends/', require('./routes/friends/friends.routes'));
 app.use('/kit/friends/sync/', require('./routes/friends/sync'));
@@ -122,10 +123,6 @@ app.use('/kit/share/', require('./routes/share'));
 
 // app.use('/kit/user/', require('./routes/user/user'));
 
-
-
-
-app.use('/kit/notification/', require('./routes/notifications/notifications.routes'));
 
 // Developments routes
 // app.use('/dev/translations/', express.static(path.join(__dirname, "../dev/translations")));
