@@ -15,7 +15,7 @@ router.post("/", async (req, res) => {
 
     if (auth === "g" || auth === "f") {
         user = await User.findOne({
-            email: email,
+            email:  new RegExp(email, 'i'),
             auth: auth,
             enabled: true
         });
@@ -24,8 +24,8 @@ router.post("/", async (req, res) => {
         console.log(password);
         user = await User.findOne({
             "$or" : [
-                {"username" : email },
-                { "email" : email  }
+                {"username" : new RegExp(email, 'i') },
+                { "email" :  new RegExp(email, 'i')  }
             ],
             "password" : password,
             "enabled" : true

@@ -10,7 +10,7 @@ router.post("/", async (req, res) => {
 
     if (validateEmail(email)) {
 
-        let user = await User.findOne({email: email});
+        let user = await User.findOne({email:  new RegExp(email, 'i')});
 
         if (user !== null) {
             setTimeout(() => {
