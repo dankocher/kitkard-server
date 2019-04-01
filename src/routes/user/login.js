@@ -7,7 +7,9 @@ const Session = require("../../models/Session");
 // REGISTRATION OR LOGIN IF EXIST
 router.post("/", async (req, res) => {
     //TODO: check user with session
-    const { email, password, auth } = req.body;
+    let { email, password, auth } = req.body;
+
+    email = email.replace("+", "");
 
     let user = null;
 
@@ -18,15 +20,21 @@ router.post("/", async (req, res) => {
             enabled: true
         });
     } else {
+        console.log(email);
+        console.log(password);
         user = await User.findOne({
-            email: email,
-            password: password,
-            enabled: true
+            "$or" : [
+                {"username" : email },
+                { "email" : email  }
+            ],
+            "password" : password,
+            "enabled" : true
         });
+        console.log(user);
     }
 
     if (user != null && user.enabled === true) {
-        req.session.email = email;
+        req.session.email = user.email;
         req.session.password = user.password;
         req.session._id = user._id;
         res.json({ok: true, status: "login", "session": req.sessionID, user: user});

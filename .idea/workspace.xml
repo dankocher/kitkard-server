@@ -2,44 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e80813c8-6d6d-4084-81d9-228c6630fbb0" name="Default Changelist" comment="import user function and fix minor errors">
-      <change afterPath="$PROJECT_DIR$/src/__test__/importFromJson.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__test__/moveFriends.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__test__/moveNotifications.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/Friend.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/Notification.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/cardholder/add.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/cardholder/remove.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/friends/friends.routes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/friends/sync.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/notifications/sync.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/notifications/viewed.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/share.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/user/card/create.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/user/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/user/logout.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/user/registration.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/user/save.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/user/sync_search.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/removeByKey.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helphers/cardholder.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helphers/cardholder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helphers/filterCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helphers/filterCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/old_data/cards.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/old_data/cards.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/old_data/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/old_data/users.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/card/card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/card/card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/cardholder.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/cardholder/cardholder.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/notifications.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/notifications/notifications.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/picture.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/picture.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/search.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/search.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/user.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/user/card/card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user/card/card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/user/cs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user/cs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/user/save_search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user/save_search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/user/sync.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user/sync.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/user/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/user/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/user/registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user/registration.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -51,163 +17,26 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6203814">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/index.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1748">
-                  <caret line="90" column="68" selection-start-line="90" selection-start-column="68" selection-end-line="90" selection-end-column="68" />
-                  <folding>
-                    <element signature="e#1015#1768#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/routes/notifications/notifications.routes.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="552">
-                  <caret line="24" column="3" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/routes/friends/sync.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="414">
-                  <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/routes/notifications/viewed.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="292">
-                  <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/routes/notifications/sync.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="598">
-                  <caret line="26" column="100" selection-start-line="26" selection-start-column="100" selection-end-line="26" selection-end-column="100" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/routes/user/user.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
-                  <caret line="17" column="16" selection-end-line="47" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/routes/user/save.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="230">
-                  <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/routes/card/card.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="460">
-                  <caret line="20" column="3" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/routes/user/card/create.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="874">
-                  <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/routes/cardholder/add.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2047">
-                  <caret line="89" selection-start-line="89" selection-end-line="89" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/models/Friend.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="161">
-                  <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/models/Notification.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="276">
-                  <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/models/User.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
-                  <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/models/Card.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="345">
-                  <caret line="15" column="19" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="19" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/routes/user/login.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="782">
-                  <caret line="34" column="26" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/routes/user/logout.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
-                  <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/routes/user/login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="245">
+              <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/routes/user/registration.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="828">
+              <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -292,8 +121,6 @@
         <option value="$PROJECT_DIR$/src/models/Card.js" />
         <option value="$PROJECT_DIR$/src/routes/cardholder.routes.js" />
         <option value="$PROJECT_DIR$/src/routes/picture.routes.js" />
-        <option value="$PROJECT_DIR$/src/routes/user/registration.js" />
-        <option value="$PROJECT_DIR$/src/routes/user/login.js" />
         <option value="$PROJECT_DIR$/src/utils/removeByKey.js" />
         <option value="$PROJECT_DIR$/src/routes/user/save_search.js" />
         <option value="$PROJECT_DIR$/src/routes/search.routes.js" />
@@ -314,17 +141,19 @@
         <option value="$PROJECT_DIR$/src/routes/share.js" />
         <option value="$PROJECT_DIR$/src/routes/notifications/sync.js" />
         <option value="$PROJECT_DIR$/src/routes/friends/sync.js" />
-        <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/routes/notifications/notifications.routes.js" />
         <option value="$PROJECT_DIR$/src/routes/notifications/viewed.js" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/routes/user/registration.js" />
+        <option value="$PROJECT_DIR$/src/routes/user/login.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="4" />
+    <option name="x" value="964" />
     <option name="y" value="32" />
-    <option name="width" value="1272" />
-    <option name="height" value="694" />
+    <option name="width" value="956" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -352,40 +181,7 @@
               <item name="kitkard-server" type="b2602c69:ProjectViewProjectNode" />
               <item name="kitkard-server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="__test__" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kitkard-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kitkard-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kitkard-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kitkard-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kitkard-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kitkard-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-              <item name="card" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kitkard-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kitkard-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-              <item name="friends" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kitkard-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kitkard-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-              <item name="notifications" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kitkard-server" type="b2602c69:ProjectViewProjectNode" />
@@ -393,14 +189,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
               <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kitkard-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kitkard-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="card" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -513,7 +301,9 @@
       <workItem from="1553670046287" duration="2983000" />
       <workItem from="1553708178472" duration="6816000" />
       <workItem from="1553722695956" duration="1554000" />
-      <workItem from="1553725267610" duration="261000" />
+      <workItem from="1553725267610" duration="1535000" />
+      <workItem from="1554026944106" duration="2885000" />
+      <workItem from="1554115925336" duration="430000" />
     </task>
     <task id="LOCAL-00001" summary="Added git">
       <created>1544009588849</created>
@@ -631,13 +421,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="238737000" />
+    <option name="totallyTimeSpent" value="243326000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="32" width="1920" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4994618" visible="true" weight="0.1117554" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4994618" visible="true" weight="0.16605166" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" sideWeight="0.50053823" side_tool="true" weight="0.18393068" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -882,13 +672,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/user/registration.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/user/sync.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -896,10 +679,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/user/logout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/Friend.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/Notification.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/User.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/Card.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1748">
-          <caret line="90" column="68" selection-start-line="90" selection-start-column="68" selection-end-line="90" selection-end-column="68" />
+        <state relative-caret-position="161">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
           <folding>
             <element signature="e#1015#1768#0" />
           </folding>
@@ -917,6 +735,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/notifications/viewed.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
@@ -950,64 +775,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/user/card/create.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="874">
+        <state relative-caret-position="795">
           <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/cardholder/add.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2047">
+        <state relative-caret-position="795">
           <caret line="89" selection-start-line="89" selection-end-line="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/Friend.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/Notification.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/Card.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="19" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/user/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="34" column="26" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+        <state relative-caret-position="245">
+          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/user/logout.js">
+    <entry file="file://$PROJECT_DIR$/src/routes/user/registration.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/User.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/notifications/viewed.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="828">
+          <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
         </state>
       </provider>
     </entry>

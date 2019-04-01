@@ -66,6 +66,18 @@ app.get(/\/\+.*/, (req, res) => {
     req.session.cuenta = req.session.cuenta ? req.session.cuenta + 1 : 1;
     res.send(`Has visto esta pagina: ${req.session.cuenta} veces`);
 });
+// /+username
+app.get(/\/＋.*/, (req, res) => {
+    console.log(req.sessionID);
+    req.session.cuenta = req.session.cuenta ? req.session.cuenta + 1 : 1;
+    res.send(`Has visto esta pagina: ${req.session.cuenta} veces`);
+});
+// /+username
+app.get(/\/%EF%BC%8B.*/, (req, res) => {
+    console.log(req.sessionID);
+    req.session.cuenta = req.session.cuenta ? req.session.cuenta + 1 : 1;
+    res.send(`Has visto esta pagina: ${req.session.cuenta} veces`);
+});
 
 // Settings
 app.set('port', process.env.PORT || 3000);
