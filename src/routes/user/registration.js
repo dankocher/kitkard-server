@@ -27,11 +27,7 @@ router.post("/", async (req, res) => {
                 updated: date
             });
             await user.save();
-
-            req.session.email = email;
-            req.session.password = user.password;
             req.session._id = user._id;
-
             res.json({ok: true, status: "registered", "session": req.sessionID, user: user});
         }
     } else {

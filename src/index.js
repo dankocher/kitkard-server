@@ -88,6 +88,7 @@ app.use(express.json());
 
 //Routes
 app.use('/kit/reg/', require('./routes/user/registration'));
+app.use('/kit/auth/', require('./routes/user/auth'));
 app.use('/kit/login/', require('./routes/user/login'));
 app.use('/kit/logout/', require('./routes/user/logout'));
 
