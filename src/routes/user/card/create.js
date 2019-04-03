@@ -14,7 +14,7 @@ router.post("/", async (req, res) => {
     }
     else
     {
-        var dbcard = await Card.findOne({ cardname });
+        var dbcard = await Card.findOne({ cardname: new RegExp(cardname, 'i') });
         if (dbcard == null) //Card not Exist
         {
             const dbUser = await User.findById(req.session._id);

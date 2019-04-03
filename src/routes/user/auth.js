@@ -4,10 +4,10 @@ const router = express.Router();
 const User = require("../../models/User");
 const Session = require("../../models/Session");
 
-// REGISTRATION OR LOGIN IF EXIST
+// REGISTRATION OR  LOGIN IF EXIST
 router.post("/", async (req, res) => {
     //TODO: check user with session
-    let { email, auth } = req.body;
+    let { email, auth, auth_method } = req.body;
 
     let user = await User.findOne({
         email:  new RegExp(email, 'i'),
@@ -21,6 +21,7 @@ router.post("/", async (req, res) => {
         } else if (user.auth === undefined || user.auth === "") {
             let date = new Date().getTime();
             user.auth = auth;
+            user.auth_method = auth_method;
             user.updated = date;
             await user.save();
             req.session._id = user._id;
@@ -41,6 +42,7 @@ router.post("/", async (req, res) => {
             email,
             password: "",
             auth,
+            auth_method,
             enabled: true,
             date: date,
             updated: date

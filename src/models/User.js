@@ -12,6 +12,7 @@ const UserSchema = new Schema({
     search: {type: Array, required: false},
     search_updated: {type: Number, required: false},
     auth: {type: String, required: false},
+    auth_method: {type: String, required: false},
     oldid: {type: String, required: false},
 });
 
