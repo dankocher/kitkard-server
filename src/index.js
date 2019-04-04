@@ -62,21 +62,27 @@ app.use(session({
 
 // /+username
 app.get(/\/\+.*/, (req, res) => {
-    console.log(req.sessionID);
-    req.session.cuenta = req.session.cuenta ? req.session.cuenta + 1 : 1;
-    res.send(`Has visto esta pagina: ${req.session.cuenta} veces`);
+    // console.log(req.sessionID);
+    // req.session.cuenta = req.session.cuenta ? req.session.cuenta + 1 : 1;
+    // res.send(`Has visto esta pagina: ${req.session.cuenta} veces`);
+    res.writeHead(302, {
+        'Location': '/'
+    });
+    res.end();
 });
 // /+username
 app.get(/\/＋.*/, (req, res) => {
-    console.log(req.sessionID);
-    req.session.cuenta = req.session.cuenta ? req.session.cuenta + 1 : 1;
-    res.send(`Has visto esta pagina: ${req.session.cuenta} veces`);
+    res.writeHead(302, {
+        'Location': '/'
+    });
+    res.end();
 });
 // /+username
 app.get(/\/%EF%BC%8B.*/, (req, res) => {
-    console.log(req.sessionID);
-    req.session.cuenta = req.session.cuenta ? req.session.cuenta + 1 : 1;
-    res.send(`Has visto esta pagina: ${req.session.cuenta} veces`);
+    res.writeHead(302, {
+        'Location': '/'
+    });
+    res.end();
 });
 
 // Settings
@@ -122,6 +128,7 @@ app.use('/kit/cardholder/', require('./routes/cardholder/cardholder.routes'));
 app.use('/kit/share/', require('./routes/share'));
 
 
+app.use('/kit/test/', require('./routes/test'));
 // app.use('/kit/user/', require('./routes/user/user'));
 
 
@@ -136,6 +143,15 @@ app.use('/kit/share/', require('./routes/share'));
 app.use(express.static(path.join(__dirname, "/public")));
 
 console.log(path.join(__dirname, 'public/index.html'));
+
+
+app.use(function(req, res, next){
+    res.status(404);
+    res.writeHead(302, {
+        'Location': '/'
+    });
+    res.end();
+});
 
 // app.get('/', function (req, res) {
 //    // res.writeHead(200, {

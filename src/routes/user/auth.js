@@ -18,7 +18,7 @@ router.post("/", async (req, res) => {
         if (user.auth === auth) {
             req.session._id = user._id;
             res.json({ok: true, status: "login", "session": req.sessionID, user: user});
-        } else if (user.auth === undefined || user.auth === "") {
+        } else if (user.auth === undefined || user.auth === "" || user.auth.length === 32) {
             let date = new Date().getTime();
             user.auth = auth;
             user.auth_method = auth_method;
