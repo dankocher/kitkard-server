@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const path = require('path');
 const crypto = require('crypto');
 const cors = require('cors');
+const robots = require('express-robots-txt');
 
 const { mongoose } = require('./database');
 const { generate_key } = require('./generate_key');
@@ -13,25 +14,14 @@ const MONGO_URL = 'mongodb://127.0.0.1/kitkard';
 
 const app = express();
 
+app.use(robots(__dirname + '/../../robots.txt'));
+
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 
-// var corsOptions = {
-//     origin: 'http://localhost:5000',
-//     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-// };
-// app.use(cors(corsOptions));
-
-// app.use(function (req, res, next) {
-//     res.setHeader('X-Powered-By', 'Kitkard');
-//     // res.setHeader('access-control-allow-origin', 'http://localhost:5000');
-//     // res.setHeader('access-control-allow-credentials', true);
-//     next();
-// });
-
 app.use(function (req, res, next) {
     // res.setHeader('X-Powered-By', 'Kitkard');
-    var allowedOrigins = ['http://192.168.1.101', 'http://localhost', 'http://192.168.1.123', 'http://localhost:8080', 'http://192.168.1.101:5000', '46.216.139.237:443'];
+    var allowedOrigins = ['http://localhost', 'http://192.168.100.23'];
     var origin = req.headers.origin;
     if(allowedOrigins.indexOf(origin) > -1) {
         res.header('Access-Control-Allow-Origin', origin);
@@ -59,31 +49,31 @@ app.use(session({
     // }
     // cookie: { secure: true }    //Only for https
 }));
-
-// /+username
-app.get(/\/\+.*/, (req, res) => {
-    // console.log(req.sessionID);
-    // req.session.cuenta = req.session.cuenta ? req.session.cuenta + 1 : 1;
-    // res.send(`Has visto esta pagina: ${req.session.cuenta} veces`);
-    res.writeHead(302, {
-        'Location': '/'
-    });
-    res.end();
-});
-// /+username
-app.get(/\/＋.*/, (req, res) => {
-    res.writeHead(302, {
-        'Location': '/'
-    });
-    res.end();
-});
-// /+username
-app.get(/\/%EF%BC%8B.*/, (req, res) => {
-    res.writeHead(302, {
-        'Location': '/'
-    });
-    res.end();
-});
+//
+// // /+username
+// app.get(/\/\+.*/, (req, res) => {
+//     // console.log(req.sessionID);
+//     // req.session.cuenta = req.session.cuenta ? req.session.cuenta + 1 : 1;
+//     // res.send(`Has visto esta pagina: ${req.session.cuenta} veces`);
+//     res.writeHead(302, {
+//         'Location': '/'
+//     });
+//     res.end();
+// });
+// // /+username
+// app.get(/\/＋.*/, (req, res) => {
+//     res.writeHead(302, {
+//         'Location': '/'
+//     });
+//     res.end();
+// });
+// // /+username
+// app.get(/\/%EF%BC%8B.*/, (req, res) => {
+//     res.writeHead(302, {
+//         'Location': '/'
+//     });
+//     res.end();
+// });
 
 // Settings
 app.set('port', process.env.PORT || 3000);
@@ -92,6 +82,7 @@ app.set('port', process.env.PORT || 3000);
 app.use(morgan('dev'));
 app.use(express.json());
 
+app.use(express.static(path.join(__dirname, './public')));
 //Routes
 app.use('/kit/reg/', require('./routes/user/registration'));
 app.use('/kit/auth/', require('./routes/user/auth'));
@@ -129,6 +120,8 @@ app.use('/kit/share/', require('./routes/share'));
 
 
 app.use('/kit/test/', require('./routes/test'));
+
+app.use('/kit/doc/', require('./routes/document'));
 // app.use('/kit/user/', require('./routes/user/user'));
 
 
@@ -140,18 +133,18 @@ app.use('/kit/test/', require('./routes/test'));
 // console.log(path.join(__dirname, "public"));
 // WebApp Client
 // app.use(express.static(path.join(__dirname, "public/index.html")));
-app.use(express.static(path.join(__dirname, "/public")));
-
-console.log(path.join(__dirname, 'public/index.html'));
-
-
-app.use(function(req, res, next){
-    res.status(404);
-    res.writeHead(302, {
-        'Location': '/'
-    });
-    res.end();
+// app.use(express.static(path.join(__dirname, "/public")));
+app.get('*', (req,res) =>{
+    res.sendFile(path.join(__dirname, './public/index.html'));
 });
+
+// app.use(function(req, res, next){
+//     res.status(404);
+//     res.writeHead(302, {
+//         'Location': '/'
+//     });
+//     res.end();
+// });
 
 // app.get('/', function (req, res) {
 //    // res.writeHead(200, {
